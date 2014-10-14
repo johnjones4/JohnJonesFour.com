@@ -1,0 +1,45 @@
+---
+layout: landing
+slug: index
+sidebar: true
+header_title: JohnJonesFour
+description: "John Jones is a developer and aspiring entrepreneur working in DC; living in VA."
+---
+
+{% for post in paginator.posts %}
+  <article class="post">
+    <h2>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h2>
+    <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+    {{ post.description }}
+  </article>
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+<div class="pagination btn-group">
+  {% if paginator.previous_page %}
+    <a class="btn btn-default btn-sm" role="button" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% else %}
+    <a href="#" class="btn btn-default btn-sm" role="button">&laquo; Prev</a>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <a href="#" class="btn btn-primary btn-sm" role="button">{{ page }}</a>
+    {% elsif page == 1 %}
+      <a class="btn btn-default btn-sm" role="button" href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a class="btn btn-default btn-sm" role="button" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a class="btn btn-default btn-sm" role="button" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% else %}
+    <a href="#" class="btn btn-default btn-sm" role="button">Next &raquo;</a>
+  {% endif %}
+</div>
+{% endif %}
+
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>

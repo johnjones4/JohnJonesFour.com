@@ -1,0 +1,23 @@
+<aside class="col-md-4 sidebar">
+
+  <div class="links">
+    <h3 class="hidden">Links</h3>
+    <ul class="list-group">
+      {% for link in site.links %}
+        <li class="list-group-item"><a href="{{ link.src }}" target="_blank">{{ link.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="github">
+    <h3 class="hidden">GitHub</h3>
+    <iframe src="http://lab.lepture.com/github-cards/card.html?user=johnjones4" frameborder="0" scrolling="0" width="100%" height="165" allowtransparency></iframe>
+  </div>
+
+  <div class="twitter">
+    <h3 class="hidden">Twitter</h3>
+    <a class="twitter-timeline" href="https://twitter.com/johnjones4" data-widget-id="522046989471477760">Tweets by @johnjones4</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+
+</aside>

@@ -1,0 +1,37 @@
+body {
+  padding-top: 50px;
+}
+
+.projects .project {
+  h3 {
+    margin-top: 0;
+  }
+
+  .panel {
+    height: 200px;
+  }
+}
+
+.post-image {
+  margin-bottom: 1em;
+}
+
+.pagination {
+  margin: 1em 0;
+}
+
+.github-widget {
+  padding: 1em 0;
+}
+
+.index .jumbotron {
+  background: url(../img/home.jpg) repeat center center;
+}
+
+.projects .jumbotron {
+  background: url(../img/projects.jpg) repeat center center;
+}
+
+.sidebar {
+  padding-top: 1em;
+}

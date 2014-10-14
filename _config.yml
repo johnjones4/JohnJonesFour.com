@@ -1,0 +1,26 @@
+title: JohnJonesFour
+email: johnjones4@gmail.com
+description: "John Jones is a developer and aspiring entrepreneur working in DC; living in VA."
+url: "http://johnjonesfour.com"
+markdown: kramdown
+permalink: pretty
+paginate: 10
+
+links:
+- src: "https://github.com/johnjones4"
+  name: "GitHub"
+- src: "https://twitter.com/johnjones4"
+  name: "Twitter"
+- src: "https://www.linkedin.com/in/johnjones4"
+  name: "LinkedIn"
+- src: "https://www.facebook.com/johnjones4"
+  name: "Facebook"
+- src: "https://www.flickr.com/photos/johnjones4/page1/"
+  name: "Flickr"
+- src: "https://plus.google.com/109424635340989929246/posts"
+  name: "Google+"
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/

@@ -1,0 +1,5 @@
+<p class="links btn-group">
+  {% for link in page.links %}
+    <a href="{{ link.src }}"  class="btn btn-default" target="_blank" role="button">{{ link.name }}</a>
+  {% endfor %}
+</p>

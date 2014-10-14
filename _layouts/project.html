@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="container" role="main">
+  <div class="row">
+    <article class="col-md-8">
+      <h2>{{ page.title }}</h2>
+      <p class="links">
+        {% if page.github %}
+          <a href="http://github.com/{{ page.github }}" class="btn btn-xs btn-success" target="_blank" role="button">GitHub</a>
+        {% endif %}
+        {% if page.itunes %}
+          <a href="{{ page.itunes }}" class="btn btn-success" target="_blank" role="button">iTunes App Store</a>
+        {% endif %}
+      </p>
+      {% include postimage.html %}
+      {{ content }}
+      {% if page.github %}
+        <div class="github-widget" data-repo="{{ page.github }}"></div>
+      {% endif %}
+      {% include postlinks.html %}
+    </article>
+    {% include sidebar.html %}
+  </div>
+</div>
