@@ -5,6 +5,7 @@ url: "http://johnjonesfour.com"
 markdown: kramdown
 permalink: pretty
 paginate: 10
+exclude: ["s3_website.yml"]
 
 links:
 - src: "https://github.com/johnjones4"
@@ -24,3 +25,4 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+
