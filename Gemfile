@@ -1,3 +1,5 @@
-source "https://rubygems.org"
-
+source 'https://rubygems.org'
+gem 'jekyll'
+gem 'juicer'
 gem 'jekyll-sitemap'
+gem 's3_website'

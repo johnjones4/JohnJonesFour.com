@@ -4,7 +4,7 @@ title: Speaking
 slug: speaking
 ---
 
-John is available for speaking engagements upon request. In the past, he has spoken on topics such as Drupal, web analytics, and web development process. Please [email](mailto:johnjones4@gmail.com) to request John as a speaker at your event.
+John is available for speaking engagements upon request. In the past, he has spoken on topics such as Drupal, web analytics, and web development process. Please [contact me](/contact/) to request John as a speaker at your event.
 
 ### Upcoming:
 
