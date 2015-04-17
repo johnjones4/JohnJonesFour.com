@@ -2,6 +2,10 @@ body {
   padding-top: 50px;
 }
 
+.navbar-inverse {
+  background: #111;
+}
+
 .projects .project {
   h3 {
     margin-top: 0;
@@ -24,6 +28,10 @@ body {
   padding: 1em 0;
 }
 
+.jumbotron {
+  color: white;
+}
+
 .index .jumbotron {
   background: url(../img/home.jpg) repeat center center;
 }
@@ -39,4 +47,12 @@ body {
 article img {
   width: 100%;
   height: auto;
+}
+
+.post {
+  h2 {
+    a {
+      color: inherit;
+    }
+  }
 }
