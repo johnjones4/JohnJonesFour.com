@@ -56,3 +56,14 @@ article img {
     }
   }
 }
+
+code {
+  white-space: pre-wrap;
+  display: block;
+  padding: 1em;
+}
+
+p code {
+  display: inline-block;
+  padding: 2px 4px;
+}
