@@ -6,6 +6,10 @@ slug: speaking
 
 John is available for speaking engagements upon request. In the past, he has spoken on topics such as Drupal, web analytics, and web development process. Please [contact me](/contact/) to request John as a speaker at your event.
 
+### Upcoming
+
+* [Drupal Govcon: User Centered Design and Customer Service Oriented Government](https://www.drupalgovcon.org/drupal-govcon-2015/sessions/user-centered-design-and-customer-service-oriented-government)
+
 ### Past:
 
 * [Mobile Development Career Panel, February 2015](https://generalassemb.ly/education/mobile-development-career-panel/washington-dc/10846)
