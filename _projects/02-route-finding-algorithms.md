@@ -6,6 +6,7 @@ img:
   alt: "Route Finding Demo Application"
 github: "johnjones4/astarsearch"
 description: "In my senior year at Dickinson College, I researched and implemented several shortest-path finding algorithms."
+type: archive
 ---
 
 In my senior year at Dickinson College, I researched and implemented several shortest-path finding algorithms. This translates directly into route guidance systems employed by mapping websites and in-car GPSes.

@@ -9,6 +9,7 @@ links:
   name: "TruckToMe.com"
 description: "TruckToMe follows the Twitter handles of over 100 Washington DC-area food trucks and provides users with a quick way to find their favorite trucks."
 itunes: "https://itunes.apple.com/us/app/trucktome/id588690792?ls=1&mt=8"
+type: minor
 ---
 
 TruckToMe follows the Twitter handles of over 100 Washington DC-area food trucks and provides users with a quick way to find their favorite trucks. [trucktome.com](http://trucktome.com)

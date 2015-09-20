@@ -3,6 +3,7 @@ layout: project
 title: "Stellar"
 description: "Stellar is a straightforward App for constellation spotting."
 itunes: "https://itunes.apple.com/us/app/stellar/id348701318?ls=1&mt=8"
+type: minor
 ---
 
 Stellar is a straightforward App for constellation spotting. It uses the compass and accelerometer combined with a database of all 88 major constellations to display where and what is in the sky.

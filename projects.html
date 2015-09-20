@@ -7,21 +7,64 @@ header_title: Projects
 description: "Here are some projects I own or contribute to."
 ---
 
-{% for project in site.projects reversed %}
-  <div class="col-md-4 project">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <h3><a class="project-link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></h3>
-        <p>{{ project.description }}</p>
-        <p class="links">
-          {% if project.github %}
-            <a href="http://github.com/{{ project.github }}" class="btn btn-success" target="_blank" role="button">GitHub</a>
-          {% endif %}
-          {% if project.itunes %}
-            <a href="{{ project.itunes }}" class="btn btn-success" target="_blank" role="button">iTunes App Store</a>
-          {% endif %}
-        </p>
+<h2>Major Projects</h2>
+
+<div class="row">
+  {% for project in site.projects reversed %}
+    {% if project.type == 'major' %}
+      <div class="col-md-6 project">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h3><a class="project-link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></h3>
+            <p>{{ project.description }}</p>
+            <p class="links">
+              {% if project.github %}
+                <a href="http://github.com/{{ project.github }}" class="btn btn-success" target="_blank" role="button">GitHub</a>
+              {% endif %}
+              {% if project.itunes %}
+                <a href="{{ project.itunes }}" class="btn btn-success" target="_blank" role="button">iTunes App Store</a>
+              {% endif %}
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-{% endfor %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+<h2>Minor Projects</h2>
+
+<div class="row">
+  {% for project in site.projects reversed %}
+    {% if project.type == 'minor' %}
+      <div class="col-md-4 project">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h3><a class="project-link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></h3>
+            <p>{{ project.description }}</p>
+            <p class="links">
+              {% if project.github %}
+                <a href="http://github.com/{{ project.github }}" class="btn btn-success" target="_blank" role="button">GitHub</a>
+              {% endif %}
+              {% if project.itunes %}
+                <a href="{{ project.itunes }}" class="btn btn-success" target="_blank" role="button">iTunes App Store</a>
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<h2>Archive Projects</h2>
+
+<ul>
+  {% for project in site.projects reversed %}
+    {% if project.type == 'archive' %}
+      <li>
+        <a class="project-link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a> - {{ project.description }}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

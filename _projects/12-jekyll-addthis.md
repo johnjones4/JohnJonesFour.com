@@ -3,6 +3,7 @@ layout: project
 title: "Jekyll AddThis"
 github: "AdferoInteractive/jekyll-addthis"
 description: "This simple Jekyll plugin generates links to AddThis' sharing endpoint service."
+type: minor
 ---
 
 This simple Jekyll plugin generates links to [AddThis' sharing endpoint service](http://support.addthis.com/customer/portal/articles/381265-addthis-sharing-endpoints#.UsxoUGRDtDI). The module does not introduce any Javascript functionality or CSS styling to the share links; it simply generates the HTML markup leaving styling and Javascript functionality to site builders.
