@@ -14,10 +14,14 @@ layout: default
       </p>
       {% include postimage.html %}
       {{ content }}
+      {% include postlinks.html %}
       {% if page.github %}
         <div class="github-widget" data-repo="{{ page.github }}"></div>
+      {% else %}
+        {% for github in page.githubs %}
+          <div class="github-widget" data-repo="{{ github }}"></div>
+        {% endfor %}
       {% endif %}
-      {% include postlinks.html %}
     </article>
     {% include sidebar.html %}
   </div>

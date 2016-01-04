@@ -19,10 +19,14 @@ description: "Here are some projects I own or contribute to."
             <p>{{ project.description }}</p>
             <p class="links">
               {% if project.github %}
-                <a href="http://github.com/{{ project.github }}" class="btn btn-success" target="_blank" role="button">GitHub</a>
+                <a href="http://github.com/{{ project.github }}" class="btn btn-sm btn-info" target="_blank" role="button">GitHub</a>
+              {% else %}
+                {% for github in project.githubs %}
+                  <a href="http://github.com/{{ github }}" class="btn btn-sm btn-info" target="_blank" role="button">GitHub ({{ github }})</a>
+                {% endfor %}
               {% endif %}
               {% if project.itunes %}
-                <a href="{{ project.itunes }}" class="btn btn-success" target="_blank" role="button">iTunes App Store</a>
+                <a href="{{ project.itunes }}" class="btn btn-sm btn-info" target="_blank" role="button">iTunes App Store</a>
               {% endif %}
             </p>
           </div>
