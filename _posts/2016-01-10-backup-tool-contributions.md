@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Contributing Backup Tool"
+title:  "Contributing to Backup Tool"
 description: "My latest project, BackupTool, has really taken off. I've added a new section to the project outlining how contributors can help out with the project. This is my first open source project to get this sort of traction, so it is quite exciting."
 links:
 - src: "https://github.com/johnjones4/BackupTool/blob/master/CONTRIBUTING.md"
