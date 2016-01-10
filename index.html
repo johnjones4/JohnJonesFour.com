@@ -12,7 +12,10 @@ description: "John Jones is a technologist and aspiring entrepreneur working in 
       <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
     </h2>
     <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-    {{ post.description }}
+    {% if post.embed %}
+      <p class="embed-responsive embed-responsive-16by9">{{ post.embed }}</p>
+    {% endif %}
+    <p>{{ post.description }}</p>
   </article>
 {% endfor %}
 
