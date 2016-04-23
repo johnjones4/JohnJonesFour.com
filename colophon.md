@@ -2,6 +2,7 @@
 layout: page
 title: Colophon
 slug: colophon
+background_image: "colophon.jpg"
 ---
 
 ### Ideation: Wunderlist and Pocket

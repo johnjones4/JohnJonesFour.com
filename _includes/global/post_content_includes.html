@@ -1,3 +1,25 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          {% for link in site.links %}
+            <li>
+              <a href="{{ link.src }}" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-{{ link.name }} fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <p class="rss-subscribe text-muted  ">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+        <p class="copyright text-muted">Copyright &copy; John E. Jones IV 2016</p>
+      </div>
+    </div>
+  </div>
+</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" async="true"></script>
 <script src="/js/jquery.githubRepoWidget.min.js" async="true"></script>

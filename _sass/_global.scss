@@ -1,10 +1,3 @@
-body {
-  padding-top: 50px;
-}
-
-.navbar-inverse {
-  background: #111;
-}
 
 .projects .project {
   h3 {
@@ -12,49 +5,27 @@ body {
   }
 
   .panel {
-    height: 200px;
+    height: 360px;
   }
-}
-
-.post-image {
-  margin-bottom: 1em;
-}
-
-.pagination {
-  margin: 1em 0;
 }
 
 .github-widget {
   padding: 1em 0;
 }
 
-.jumbotron {
-  color: white;
+.rss-subscribe {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 0;
 }
 
-.index .jumbotron {
-  background: url(../img/home.jpg) repeat center center;
-}
-
-.projects .jumbotron {
-  background: url(../img/projects.jpg) repeat center center;
-}
-
-.sidebar {
-  padding-top: 1em;
-}
-
-article img {
-  width: 100%;
-  height: auto;
-}
-
-.post {
-  h2 {
-    a {
-      color: inherit;
-    }
-  }
+.intro-header {
+  background-size: cover;
+  background-color: #afafaf; /* Old browsers */
+  background-image: -moz-radial-gradient(center, ellipse cover, #afafaf 0%, #7a7a7a 100%); /* FF3.6-15 */
+  background-image: -webkit-radial-gradient(center, ellipse cover, #afafaf 0%,#7a7a7a 100%); /* Chrome10-25,Safari5.1-6 */
+  background-image: radial-gradient(ellipse at center, #afafaf 0%,#7a7a7a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afafaf', endColorstr='#7a7a7a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 code {

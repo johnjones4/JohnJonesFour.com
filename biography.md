@@ -2,6 +2,7 @@
 layout: page
 title: Biography
 slug: biography
+background_image: "bio.jpg"
 ---
 
 Give Adfero’s Director of Technology, John Jones, a complex technical problem or a digital strategy challenge, and he will instinctively know how to get to the solution. John, a.k.a “JJ,” lives and breathes websites and mobile apps, and – luckily for us -  has a talent for translating tough concepts and jargon into relatable terms.

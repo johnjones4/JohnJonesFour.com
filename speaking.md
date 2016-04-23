@@ -2,6 +2,7 @@
 layout: page
 title: Speaking
 slug: speaking
+background_image: "speaking.jpg"
 ---
 
 John is available for speaking engagements upon request. In the past, he has spoken on topics such as Drupal, web analytics, and web development process. Please [contact me](/contact/) to request John as a speaker at your event.

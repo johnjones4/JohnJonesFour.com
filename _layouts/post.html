@@ -2,28 +2,43 @@
 layout: default
 ---
 
-<div class="container" role="main">
-  <div class="row">
-    <article class="col-md-8">
-      <h1>{{ page.title }}</h1>
-      <p class="meta">
-        {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
-      </p>
-      <p>
-        <div class="addthis_sharing_toolbox"></div>
-      </p>
-      {% include postimage.html %}
-      {% include postvideo.html %}
-      {{ content }}
-      {% include postlinks.html %}
-      {% if page.github %}
-        <div class="github-widget" data-repo="{{ page.github }}"></div>
-      {% else %}
-        {% for github in page.githubs %}
-          <div class="github-widget" data-repo="{{ github }}"></div>
-        {% endfor %}
-      {% endif %}
-    </article>
-    {% include sidebar.html %}
+<article>
+  <header class="intro-header" style="background-image: url(../img/{{ page.background_image }});">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="post-heading">
+            <h1>
+              {% if page.header_title %}
+                {{ page.header_title }}
+              {% else %}
+                {{ page.title }}
+              {% endif %}
+            </h1>
+            {% if page.description %}
+              <h2 class="subheading">{{ page.description }}</h2>
+            {% endif %}
+            <span class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        {% include postimage.html %}
+        {% include postvideo.html %}
+        {{ content }}
+        {% include postlinks.html %}
+        {% if page.github %}
+          <div class="github-widget" data-repo="{{ page.github }}"></div>
+        {% else %}
+          {% for github in page.githubs %}
+            <div class="github-widget" data-repo="{{ github }}"></div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
   </div>
-</div>
+</article>
