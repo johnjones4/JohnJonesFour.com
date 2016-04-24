@@ -1,10 +1,13 @@
 ---
 layout: post
-title: "Chef's Hat Featured on Lifehacker"
-links: 
+title: "Chef's Hat Featured on LifeHacker"
+links:
 - src: "http://lifehacker.com/chefs-hat-lets-you-bookmark-and-organize-recipes-from-a-1739652127"
   name: "Read Review"
+  headline: "Chef's Hat Lets You Bookmark and Organize Recipes from All Over the Web"
+  source: "LifeHacker"
 description: "Chef's Hat was featured on the lifestyle blog Lifehacker last weekend. This is a very exciting moment for the app as that post has brought it much attention and validation to the effort. I'm excited for the project to begin catering to a wider audience thanks to the positive review from Alan Henry at Lifehacker."
+media: true
 ---
 
 Chef's Hat was featured on the lifestyle blog *Lifehacker* last weekend. This is a very exciting moment for the app as that post has brought it much attention and validation to the effort. I'm excited for the project to begin catering to a wider audience thanks to the positive review from Alan Henry at Lifehacker.

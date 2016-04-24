@@ -1,9 +1,6 @@
 ---
 layout: default
 slug: index
-sidebar: true
-header_title: JohnJonesFour
-description: "John Jones is a technologist and aspiring entrepreneur working in DC and living in VA."
 ---
 
 <header class="intro-header" style="background-image: url(../img/home.jpg);">
@@ -12,16 +9,10 @@ description: "John Jones is a technologist and aspiring entrepreneur working in 
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="site-heading">
           <h1>
-            {% if page.header_title %}
-              {{ page.header_title }}
-            {% else %}
-              {{ page.title }}
-            {% endif %}
+            {{ site.title }}
           </h1>
-          {% if page.description %}
-            <hr class="small">
-            <span class="subheading">{{ page.description }}</span>
-          {% endif %}
+          <hr class="small">
+          <span class="subheading">{{ site.description }}</span>
         </div>
       </div>
     </div>
