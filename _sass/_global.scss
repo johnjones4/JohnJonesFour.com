@@ -1,14 +1,4 @@
 
-.projects .project {
-  h3 {
-    margin-top: 0;
-  }
-
-  .panel {
-    height: 360px;
-  }
-}
-
 .github-widget {
   padding: 1em 0;
 }
@@ -37,4 +27,13 @@ code {
 p code {
   display: inline-block;
   padding: 2px 4px;
+}
+
+.project {
+  h3 {
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
