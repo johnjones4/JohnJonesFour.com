@@ -19,11 +19,12 @@ To add Mongoosey to a project, first install the npm package:
 # npm install --save mongoosey
 ```
 
-Then, pass your express app to Mongoosey:
+Then, pass your express app and monogoose instance to Mongoosey:
 
 ```
 var mongoosey = require('mongoosey');
 mongoosey.set('app',app);
+mongoosey.set('monogoose',monogoose);
 ```
 
 For a full example, take a look at [demo.js](https://github.com/johnjones4/Mongoosey/blob/master/demo.js).
