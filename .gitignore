@@ -1,4 +1,3 @@
 _site
 .sass-cache
 s3_website.yml
-Gemfile.lock
