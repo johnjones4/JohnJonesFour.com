@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Of Algorithms and Journalism"
+title:  "Algorithmic Journalism"
 description: "In hindsight of this election, there have been countless articles on how social media, so much more than ever before, affected the outcome of the race."
 background_image: hearst.jpg
 ---
