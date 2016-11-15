@@ -5,7 +5,7 @@ url: "https://johnjonesfour.com"
 markdown: kramdown
 permalink: pretty
 paginate: 10
-exclude: ["s3_website.yml"]
+exclude: ["s3_website.yml","Readme.md"]
 gems: ["jekyll-paginate"]
 
 links:
