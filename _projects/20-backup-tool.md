@@ -5,7 +5,7 @@ githubs:
 - "johnjones4/BackupTool"
 - "johnjones4/BackupTool-Mac-Status"
 description: "I wasn't impressed with the open-source Glacier backup tools out there, so I'm implementing my tool own in Node.js along with a Mac status bar application."
-type: major
+type: minor
 links:
 - src: "/download/BackupToolStatus.zip"
   name: "Download Mac App"
