@@ -6,7 +6,7 @@ markdown: kramdown
 permalink: pretty
 paginate: 10
 exclude: ["s3_website.yml","Readme.md"]
-gems: ["jekyll-paginate"]
+gems: ["jekyll-paginate","jekyll-minimagick"]
 
 links:
 - src: "https://github.com/johnjones4"
@@ -25,3 +25,13 @@ collections:
 
 sass:
   style: compressed
+
+mini_magick:
+  og:
+    source: img/posts
+    destination: img/og/posts
+    resize: "1200x630"
+  twitter:
+    source: img/posts
+    destination: img/twitter/posts
+    resize: "280x150"
