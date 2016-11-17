@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:johnjones4/jekyll-minimagick.git
+  remote: https://github.com/johnjones4/jekyll-minimagick.git
   revision: 4f09a9c86ddec85e81834c7da7fe26ae34f06938
   specs:
     jekyll-minimagick (0.0.3)
