@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "Use Amazon As a Dynamic DNS Provider"
+links:
+- src: "https://gist.github.com/johnjones4/1a9c4326b6f4023b54bf6898c4ddfab5"
+  name: "GutHub Gist"
+- src: https://jay-baker.com/openvpn-in-a-docker-container-on-centos-7-with-systemd-support/
+  name: "Docker-based OpenVPN Tutorial"
+description: "I recently setup up an OpenVPN server, and I wished to setup a dynamic DNS entry for my configuration."
+---
+
+<p>I recently setup up an OpenVPN server, and I wished to setup a dynamic DNS
+entry for my configuration. While sites like No-IP and Dyn offer premium DNS
+packages, it made more sense to leverage Amazon's Route53 DNS service, which I
+already pay for, along with a simple script to create a dynamic DNS system.</p>
+
+<p>To do that, you first need to setup the
+<a href="https://aws.amazon.com/cli/" target="_blank">AWS Command Line Interface
+</a> for your operating system. Once you have that installed and configured,
+then create the script seen in the Gist below in the path
+<code>/usr/bin/updateDomain.sh</code>. In your revsion, replace the zone ID on
+line three with your domain's zone ID from AWS Route53 and replace the domain on
+line four with the full domain you'd like to update. Also, be sure to make the
+file executable by running <code>sudo chmod +x /usr/bin/updateDomain.sh</code>.
+Then, create a cron job that runs periodically - in my case I chose daily - to
+execute the dynamic DNS update script.</p>
+
+<p>To run a test, simply execute the script
+<code>/usr/bin/updateDomain.sh</code> and check the entry in Route53 to ensure
+it updated.</p>
+
+<p>
+  <script src="https://gist.github.com/johnjones4/1a9c4326b6f4023b54bf6898c4ddfab5.js"></script>
+</p>
