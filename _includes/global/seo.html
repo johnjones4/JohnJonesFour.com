@@ -9,7 +9,7 @@
 <meta name="twitter:site" content="{{ site.twitter_handle }}" />
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
 <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
-{% if page.background_image %}<meta property="twitter:image" content="{{ site.url }}/img/twitter/posts/{{ page.background_image }}" />{% endif %}
+{% if page.background_image %}<meta name="twitter:image" content="{{ site.url }}/img/twitter/posts/{{ page.background_image }}" />{% endif %}
 <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
 <meta property="fb:pages" content="327878177569464" />
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
