@@ -26,6 +26,8 @@ GEM
       deep_merge (~> 1.0.0)
     deep_merge (1.0.1)
     dotenv (1.0.2)
+    fastimage (2.0.1)
+      addressable (~> 2)
     ffi (1.9.14)
     forwardable-extended (2.6.0)
     jekyll (3.3.1)
@@ -74,6 +76,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  fastimage
   jekyll
   jekyll-minimagick!
   jekyll-paginate
@@ -81,4 +84,4 @@ DEPENDENCIES
   s3_website
 
 BUNDLED WITH
-   1.11.2
+   1.13.7
