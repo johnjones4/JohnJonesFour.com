@@ -5,14 +5,14 @@ slug: colophon
 background_image: "colophon.jpg"
 ---
 
-### Ideation: Things and Pocket
+### Ideation: Feedly, TweetDeck, and Pocket
 
-Often times I'll come across an article or snippet online that sparks an idea for a post. I use a todo list in [Things](https://culturedcode.com/things/) to track blog topic ideas. Once I feel I have enough material or a complete thought on a topic, I'll tackle writing the post. I also use [Pocket](http://getpocket.com/) to track my reading list and save articles that I want to cite.
+I'm constantly following the day's news on both [TweetDeck](http://tweetdeck.com) where I have lists setup for world and national news, local news, industry news, and others and on [Feedly](http://feedly.com) where I'm following numerous news, industry, and culture feeds. When I find an article I want to read, I save it in [Pocket](http://getpocket.com/).
 
-### Writing: iA Writer Pro and Atom
+### Writing: Evernote and Moeditor
 
-I write most of my posts on this site in the formatting markup Markdown. I'll use [iA Writer Pro](https://ia.net/writer/mac) to compose posts and [Atom](https://atom.io/) to manage the articles within the site.
+I'll use [Evernote](http://evernote.com) to track article ideas and notes and [Moeditor](https://moeditor.org/) to compose posts. I write most of my posts on this site in the formatting markup Markdown.
 
-### The Site: Jekyll and S3
+### The Site: Atom, Jekyll and S3
 
-This is a [Jekyll](http://jekyllrb.com/) site hosted by [Amazon S3](http://aws.amazon.com/s3/). The site's theme is a combination of [Start Bootstrap's "Clean Blog" theme](http://startbootstrap.com/template-overviews/clean-blog/) and my own minor tweaks. In addition, I use the projects [GitHub-jQuery-Repo-Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget) by Joel Sutherland and [gist-embed](https://github.com/blairvanderhoof/gist-embed) by Blair Vanderhoof to power the GitHub widgets you see throughout the site. I use Mailchimp's standard email form to collect email signups, and I use the standard Twitter widget to embed my tweets.
+This is a [Jekyll](http://jekyllrb.com/) site hosted by [Amazon S3](http://aws.amazon.com/s3/). The site's theme is a combination of [Start Bootstrap's "Clean Blog" theme](http://startbootstrap.com/template-overviews/clean-blog/) and my own minor tweaks. I do all of my coding in [Atom](https://atom.io/). In addition, I use the projects [GitHub-jQuery-Repo-Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget) by Joel Sutherland and [gist-embed](https://github.com/blairvanderhoof/gist-embed) by Blair Vanderhoof to power the GitHub widgets you see throughout the site.
