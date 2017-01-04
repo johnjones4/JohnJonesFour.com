@@ -7,7 +7,7 @@ background_image: "colophon.jpg"
 
 ### Ideation: Feedly, TweetDeck, and Pocket
 
-I'm constantly following the day's news on both [TweetDeck](http://tweetdeck.com) where I have lists setup for world and national news, local news, industry news, and others and on [Feedly](http://feedly.com) where I'm following numerous news, industry, and culture feeds. When I find an article I want to read, I save it in [Pocket](http://getpocket.com/).
+I'm constantly following the day's news on both [TweetDeck](http://tweetdeck.com) where I have lists setup for world and national news, local news, industry news, and others and on [Feedly](http://feedly.com) where I'm following numerous news, industry, and culture feeds. When I find an article I want to save for later, I clip it using [Pocket](http://getpocket.com/).
 
 ### Writing: Evernote and Moeditor
 
