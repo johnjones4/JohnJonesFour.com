@@ -17,7 +17,7 @@ Below is how I've setup *Doomsday Machine* for my own purposes:
 
 ![Backup server](/img/doomsdaymachine_server.jpg){: .img-responsive}
 
-For my purposes, I had an old Dell PowerEdge 1950 sitting unused. So I picked up two 1TB 2.5 inch SATA drives and with drive caddies and installed CentOS 7. An actual server like I've used here is not required, but it was available for me at the time of writing.
+For my purposes, I am using an old Dell PowerEdge 1950 that was sitting unused. I picked up two 1TB 2.5 inch SATA drives with drive caddies, configured them to run in RAID 0, and installed CentOS 7. An actual server like I've used here is not required, but it was available for me at the time of writing.
 
 ### Docker
 
@@ -73,7 +73,7 @@ ADD package.json package.json
 RUN npm install
 ```
 
-And, there is an additional file in `./doomsdaymachine` that is the entry executable for the container named `start.sh`. It waits for the MySQL server to become available before starting note. Make sure to make the file executable by running `chome +x ./doomsdaymachine/start.sh`.
+Finally, there is an additional file in `./doomsdaymachine` that is the entry executable for the container named `start.sh`. It waits for the MySQL server to become available before starting note. Make sure to make the file executable by running `chmod +x ./doomsdaymachine/start.sh`.
 
 ```
 #!/bin/bash
@@ -96,6 +96,6 @@ To start it all up, simply run `docker-compose build` and `docker-compose up -d`
 
 ![Doomsday Machine screenshot](https://raw.githubusercontent.com/johnjones4/Doomsday-Machine/master/screenshot.png){: .img-responsive}
 
-With the system up and running, it's time to configure each service. Depending upon server configurations, the URL for the service will be different, but if when running it on a local machine at the default port, the URL will be http://localhost:8000.
+With the system up and running, it's time to configure each service. Depending upon server configurations, the URL for the service will be different, but if running it on a local machine at the default port, the URL will be http://localhost:8000.
 
-To create new backup service, click the *+ Add Service* button in the upper right-hand corner of the screen and choose a service to add. Each service's setup page contains brief instructions on how to configure it. Most service rely on some sort of OAuth credentials that vary by provider. After the configuration of a new service, it's backup will begin during the system's next backup sweep.
+To create new backup service, click the *+ Add Service* button in the upper right-hand corner of the screen and choose a service to add. Each service's setup page contains brief instructions on how to configure it. Most services rely on some sort of OAuth credentials or token that vary by provider. After the configuration of a new service, it's backup will begin during the system's next backup sweep.
