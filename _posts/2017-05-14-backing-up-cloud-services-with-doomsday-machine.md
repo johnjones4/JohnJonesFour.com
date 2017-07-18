@@ -5,6 +5,7 @@ description: "With a rising threat of ransomware and other data-crippling threat
 githubs:
 - "johnjones4/Doomsday-Machine"
 background_image: doomsdaymachine.jpg
+note: "I've constructed a new version of Doomsday Machine based on other backup tools and coordinated all in a Docker image. <a href=\"/2017/07/17/doomsday-machine-followup-docker-project/\">Read More</a>."
 ---
 
 With a rising threat of ransomware and other data-crippling threats, backups are indispensable. While cloud services, by their nature, are extremely stable and backed-up often, there is still the threat that a malicious entity could compromise or corrupt those services.
