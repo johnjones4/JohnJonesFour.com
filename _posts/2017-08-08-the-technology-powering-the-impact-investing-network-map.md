@@ -5,6 +5,8 @@ description: "How data visualization drove the Case Foundation's build of the Im
 links:
 - src: https://casefoundation.org/blog/the-technology-powering-the-impact-investing-network-map/
   name: Read More
+  headline: "The Technology Powering the Impact Investing Network Map"
+  source: "The Case Foundation Blog"
 media: true
 ---
 

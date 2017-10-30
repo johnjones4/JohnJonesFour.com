@@ -5,6 +5,8 @@ description: "When properly supported, open source software can spark innovation
 links:
 - src: https://ssir.org/articles/entry/open_source_software_is_philanthropy
   name: Read More
+  headline: "Open Source Software Is Philanthropy"
+  source: "Stanford Social Innovation Review"
 media: true
 ---
 
