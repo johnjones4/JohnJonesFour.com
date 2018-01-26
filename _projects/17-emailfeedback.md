@@ -1,8 +1,8 @@
 ---
 layout: project
 title: "EmailFeedback"
-github: "AdferoInteractive/EmailFeedback"
-description: "This jQuery plugin helps you build single-scroll pages with complex scroll-based animations. Performance focused and mobile ready."
+github: "johnjones4/EmailFeedback"
+description: "Yet another feedback prompt. This one directs users to submit email feedback or write a review. "
 type: minor
 ---
 

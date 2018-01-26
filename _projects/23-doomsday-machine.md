@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Doomsday Machine"
-github: "johnjones4/Doomsday-Machine"
+github: "johnjones4/Doomsday-Machine-2"
 description: "Doomsday Machine is a tool for backing up cloud services to a local machine."
 type: minor
 ---

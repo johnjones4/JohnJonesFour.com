@@ -6,7 +6,7 @@ links:
   name: "GoFour"
 description: "Play the classic game of getting four dots in a row on the game board!"
 itunes: "https://itunes.apple.com/us/app/gofour/id833857025?ls=1&mt=8"
-type: minor
+type: archive
 ---
 
 Play the classic game of getting four dots in a row on the game board! Play different levels and different difficulties to try and master the game.

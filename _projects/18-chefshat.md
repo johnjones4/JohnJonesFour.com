@@ -6,7 +6,7 @@ links:
   name: "GetChefsHat.com"
 description: "Chef's Hat is a tool for saving your favorite recipes on the web. I love to cook, and I love to find new recipes online. However, I thought there was not an easy way to save my found recipes in a way that made them easy to use again later."
 itunes: "https://itunes.apple.com/us/app/id1019007017"
-type: major
+type: archive
 ---
 
 Here's how the conversation always went:
