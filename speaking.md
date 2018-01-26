@@ -5,7 +5,12 @@ slug: speaking
 background_image: "speaking.jpg"
 ---
 
-John is available for speaking engagements upon request. In the past, he has spoken on topics such as Drupal, web analytics, and web development process. Please [contact me](/contact/) to request John as a speaker at your event.
+John is available for speaking engagements upon request. Please [reach out](/contact/) to request John as a speaker at your event.
+
+### 2018:
+
+* [Good Tech Fest](https://www.goodtechfest.com/)
+* [2018 Nonprofit Technology Conference](https://www.nten.org/ntc/)
 
 ### Past:
 
