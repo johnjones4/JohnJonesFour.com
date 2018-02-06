@@ -47,3 +47,21 @@ p code {
 .email-address {
   min-width: 200px;
 }
+
+.headshot {
+  float: left;
+  margin: 0 1em 1em 0;
+  max-width: 300px;
+  height: auto;
+  border: solid 1px #ccc;
+}
+
+@media (max-width: 640px) {
+  .headshot {
+    float: none;
+    clear: both;
+    max-width: 100%;
+    margin: auto;
+    display: block;
+  }
+}
