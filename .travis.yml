@@ -1,8 +1,16 @@
-language: ruby
+language: 
+- ruby
+- node_js
 rvm:
 - 2.1
-install: bundle install
-script: jekyll build
+node_js:
+- 8
+install: 
+- npm install -g oembed2jekyll
+- bundle install
+script:
+- oembed2jekyll http://developerstopbathfixer.tumblr.com/rss --image remote_background_image
+- jekyll build
 after_success: s3_website push
 env:
   global:
