@@ -9,6 +9,7 @@ John is available for speaking engagements upon request. Please [reach out](/con
 
 ### 2018:
 
+* [Code for America Summit](http://www.cvent.com/events/code-for-america-summit-2018/event-summary-e12d85b157b94d69b80d8911cc641d36.aspx)
 * [Good Tech Fest](https://www.goodtechfest.com/)
 * [2018 Nonprofit Technology Conference](https://www.nten.org/ntc/)
 
