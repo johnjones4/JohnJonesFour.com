@@ -18,6 +18,12 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afafaf', endColorstr='#7a7a7a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
+.wide_page {
+  .intro-header {
+    margin-bottom: 0;
+  }
+}
+
 code {
   white-space: pre-wrap;
   display: block;
@@ -69,3 +75,15 @@ p code {
 .tumblr-embed {
   margin: auto !important;
 }
+
+/* fluid 5 columns */
+.grid-sizer,
+.grid-item { 
+  width: 20%; 
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+/* 2 columns */
+.grid-item--width2 { width: 40%; }
