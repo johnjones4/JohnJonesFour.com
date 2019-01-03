@@ -1,53 +1,52 @@
 import os
-import md5
-from PIL import Image
+import requests
 
-photos_dir = os.path.expanduser("~/Dropbox/John/Film Scans")
+def photo_to_name_url(photo): 
+  return (
+    "%s-%s" % (photo["id"], photo["secret"]),
+    "https://farm%d.staticflickr.com/%s/%s_%s_n.jpg" % (photo["farm"], photo["server"], photo["id"], photo["secret"]),
+    "https://farm%d.staticflickr.com/%s/%s_%s_h.jpg" % (photo["farm"], photo["server"], photo["id"], photo["secret"])
+  )
 
-def get_photo_paths():
-  out_paths = []
-  folders = os.listdir(photos_dir)
-  for folder in folders:
-    if folder[0] != '.':
-      folder_path = os.path.join(photos_dir, folder)
-      year = int(folder[0:2])
-      month = int(folder[2:4])
-      caption = folder[5:].replace("_", " ")
-      photos = os.listdir(folder_path)
-      for photo in photos:
-        photo_path = os.path.join(folder_path, photo)
-        m = md5.new()
-        m.update(photo_path)
-        hashed_name = m.hexdigest()
-        out_paths.append((photo_path, year, month, caption, hashed_name))
-  out_paths.sort(key=lambda tup: (-tup[1], -tup[2], tup[0]))
-  return out_paths
+def get_photo_urls():
+  r = requests.get("https://api.flickr.com/services/rest/", params={
+    "api_key": os.getenv("FLICKR_API_KEY"),
+    "method": "flickr.people.getPublicPhotos",
+    "format": "json",
+    "user_id": "28315761@N06",
+    "per_page": 500,
+    "nojsoncallback": True
+  })
+  data = r.json()
+  if "photos" in data:
+    return list(map(photo_to_name_url, data["photos"]["photo"]))
+  return []
 
-def build_html(photos):
+def download_and_save(url, name, size):
+  filename = "./img/photography/%s-%s.jpg" % (name, size)
+  r = requests.get(url, stream=True)
+  with open(filename, 'wb') as fd:
+    for chunk in r.iter_content(chunk_size=128):
+      fd.write(chunk)
+
+def save_photos(names_urls):
+  for (name, thumb, large) in names_urls:
+    download_and_save(thumb, name, "thumb")
+    download_and_save(large, name, "large")
+
+def build_html(names_urls):
   list_html = []
-  for (_, _, _, caption, hashed_name) in photos:
-    list_html.append("<div class=\"grid-item\"><a href=\"/img/photography/%s.jpg\" data-lity data-lity-desc=\"%s\"><img src=\"/img/photography/%s_thumb.jpg\" alt=\"%s\" /></a></div>" % (hashed_name, caption, hashed_name, caption))
+  for (name, _, _) in names_urls:
+    list_html.append("<div class=\"grid-item\"><a href=\"/img/photography/%s-large.jpg\" data-lity data-lity-desc=\"%s\"><img src=\"/img/photography/%s-thumb.jpg\" alt=\"%s\" /></a></div>" % (name, name, name, name))
   return "<div class=\"grid\">\n  <div class=\"grid-sizer\"></div>\n  " + "\n  ".join(list_html) + "\n</div>\n"
 
 def write_html(html):
-  f = open("../photography.html", "w")
+  f = open("./_includes/gallery.html", "w")
   f.write("---\nlayout: wide_page\ntitle: Photography\nslug: photography\nscripts:\n  - https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js\n  - https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js\n  - /js/lity.min.js\n  - /js/photography.js\n---\n\n")
   f.write(html)
   f.close()
 
-def process_images(photos):
-  thumb_out_width = 400
-  higres_out_width = 2000
-  for (path, _, _, _, hashed_name) in photos:
-    im = Image.open(path)
-    thumb_out_height = int((float(thumb_out_width) / float(im.size[0])) * im.size[1])
-    higres_out_height = int((float(higres_out_width) / float(im.size[0])) * im.size[1])
-    thumb = im.resize((thumb_out_width, thumb_out_height))
-    thumb.save("../img/photography/%s_thumb.jpg" % hashed_name, "JPEG")
-    highres = im.resize((higres_out_width, higres_out_height))
-    highres.save("../img/photography/%s.jpg" % hashed_name, "JPEG")
-
-photos = get_photo_paths()
-html = build_html(photos)
+names_urls = get_photo_urls()
+save_photos(names_urls)
+html = build_html(names_urls)
 write_html(html)
-process_images(photos)

@@ -1,10 +1,15 @@
 language: 
 - ruby
+- python
 rvm:
 - 2.1
+python:
+- 3.6.7
 install: 
 - bundle install
+- pip install -r requirements.txt
 script:
+- python _scripts/make_gallery.py
 - jekyll build
 after_success: s3_website push
 env:
