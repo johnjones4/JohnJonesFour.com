@@ -42,7 +42,6 @@ def build_html(names_urls):
 
 def write_html(html):
   f = open("./_includes/gallery.html", "w")
-  f.write("---\nlayout: wide_page\ntitle: Photography\nslug: photography\nscripts:\n  - https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js\n  - https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js\n  - /js/lity.min.js\n  - /js/photography.js\n---\n\n")
   f.write(html)
   f.close()
 
