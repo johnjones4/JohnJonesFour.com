@@ -3,5 +3,5 @@ _site
 _posts/2017-06-12-so-who-wants-to-build-basic-for-the-ipad-with-me.md
 _scripts/env
 .DS_Store
-img/photography
+img/photography/*.jpg
 _includes/gallery.html
