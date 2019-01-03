@@ -6,6 +6,7 @@ rvm:
 python:
 - 3.6.7
 install: 
+- gem install bundler
 - bundle install
 - pip install -r requirements.txt
 script:
