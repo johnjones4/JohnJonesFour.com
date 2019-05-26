@@ -5,7 +5,7 @@ def photo_to_name_url(photo):
   return (
     "%s-%s" % (photo["id"], photo["secret"]),
     "https://farm%d.staticflickr.com/%s/%s_%s_n.jpg" % (photo["farm"], photo["server"], photo["id"], photo["secret"]),
-    "https://farm%d.staticflickr.com/%s/%s_%s_h.jpg" % (photo["farm"], photo["server"], photo["id"], photo["secret"])
+    "https://farm%d.staticflickr.com/%s/%s_%s_c.jpg" % (photo["farm"], photo["server"], photo["id"], photo["secret"])
   )
 
 def get_photo_urls():
