@@ -1,0 +1,49 @@
+.page.photography {
+  div[role=main] {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 60px;
+    padding: 0;
+    .photography-selected-photo-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 150px;
+      .photography-selected-photo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 90%;
+        height: 90%;
+        display: block;
+        object-fit: contain;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+      }
+    }
+    .photography-photos {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 150px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      .photography-photo-button {
+        height: 150px;
+        width: 150px;
+        background-size: cover;
+        border: 0;
+        outline: none;
+        padding: 0;
+        margin: 0 10px;
+      }
+    }
+  }
+}

@@ -1,7 +1,0 @@
-source 'https://rubygems.org'
-gem 'jekyll'
-gem 'jekyll-sitemap'
-gem 's3_website'
-gem 'jekyll-paginate'
-gem 'fastimage'
-gem 'jekyll-minimagick', :git => 'https://github.com/johnjones4/jekyll-minimagick.git'
