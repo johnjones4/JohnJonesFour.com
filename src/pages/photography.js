@@ -16,17 +16,18 @@ export default class Photography extends Component {
   }
 
   render () {
+    const selectedPhoto = this.state.selectedPhoto || this.props.data.allFlickrPhoto.edges[0].node
     return (
       <Page slug='photography'>
         <div className='photography-selected-photo-wrapper'>
-          <img src={this.state.selectedPhoto || this.props.data.allFlickrPhoto.edges[0].node.url_c} className='photography-selected-photo' />
+          <img width={selectedPhoto.width_l} height={selectedPhoto.height_l} src={selectedPhoto.url_l} className='photography-selected-photo' />
         </div>
         <div className='photography-photos'>
           {
             this.props.data.allFlickrPhoto.edges.map((row, i) => {
               return (
-                <button key={i} className='photography-photo-button' onClick={() => this.setState({selectedPhoto: row.node.url_c})} style={{backgroundImage: 'url(' + row.node.url_c + ')'}}>
-                  <span className='sr-only'>Image {i}</span>
+                <button key={i} className='photography-photo-button' onClick={() => this.setState({selectedPhoto: row.node})} style={{backgroundImage: 'url(' + row.node.url_z + ')'}}>
+                  <span className='sr-only'>{row.node.title}</span>
                 </button>
               )
             })
@@ -44,11 +45,11 @@ export const query = graphql`
         node {
           id
           title
-          description
           tags
-          url_c
-          width_c
-          height_c
+          url_l
+          url_z
+          width_l
+          height_l
         }
       }
     }
