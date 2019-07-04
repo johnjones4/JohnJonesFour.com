@@ -6,7 +6,7 @@ export default () => (
     <div className='container'>
       <div className='row'>
         <div className='col'>
-
+          
         </div>
         <div className='col'>
           Hello
@@ -14,4 +14,4 @@ export default () => (
       </div>
     </div>
   </Page>
-)
+) 

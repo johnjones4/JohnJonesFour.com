@@ -9,6 +9,22 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `./src/posts`,
+      },
+    },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `json`,
+        path: `./src/data/`,
+      },
+    },
+    `gatsby-transformer-remark`,
+    {
       resolve: 'gatsby-source-flickr',
       options: {
         api_key: process.env.FLICKR_API_KEY,

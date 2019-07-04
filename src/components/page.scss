@@ -1,7 +1,15 @@
-.nav-link.active {
-  text-decoration: underline;
+@import '../bootstrap/bootstrap.scss';
+
+.navbar {
+  background: white;
 }
 
 div[role=main] {
-  padding-top: 60px;
+  padding-top: 100px;
+
+  .img-content {
+    float: left;
+    margin: 0 10px 10px 0;
+    border: solid $dark 1px;
+  }
 }

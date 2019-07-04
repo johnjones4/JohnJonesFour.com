@@ -1,0 +1,30 @@
+{
+  "label": "Writing",
+  "items": [
+    {
+      "url": "https://ssir.org/articles/entry/open_source_software_is_philanthropy",
+      "label": "Open Source Software Is Philanthropy",
+      "note": "Stanford Social Innovation Review"
+    },
+    {
+      "url": "https://medium.com/@johnjones4/an-opportunity-for-responsible-innovation-with-amazons-alexa-c23ac40bec46",
+      "label": "An Opportunity For Responsible Innovation With Amazon’s Alexa",
+      "note": null
+    },
+    {
+      "url": "/2016/12/31/where-the-internet-of-things-runs-aground/",
+      "label": "Where The Internet of Things Runs Aground",
+      "note": null
+    },
+    {
+      "url": "/2016/11/12/algorithmic-journalism/",
+      "label": "Algorithmic Journalism",
+      "note": null
+    },
+    {
+      "url": "https://medium.com/@johnjones4/basic-inspired-a-generation-of-technologists-what-will-inspire-the-next-408d26e361e1#.cf0579t1v",
+      "label": "BASIC Inspired A Generation Of Technologists. What Will Inspire The Next?",
+      "note": null
+    }
+  ]
+}

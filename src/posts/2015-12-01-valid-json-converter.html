@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Converting NSDictionaries and NSArrays to Valid JSON"
+description: "This is a small bit of code I found helpful in a recent project where I needed to quickly convert an NSDictionary with diverse membership to JSON. The result is a set of two Objective-C categories with readonly properties named validJSONArray and validJSONDictionary that return an NSArray or NSDictionary, respectively, that is ready for JSON serialization."
+---
+
+<p>This is a small bit of code I found helpful in a recent project where I needed to quickly convert an NSDictionary with diverse membership to JSON. The code works by recursively exploring an <em>NSArray</em> or <em>NSDictionary</em> and verifying that each member object complies with the guidelines set forth in the <a href="https://developer.apple.com/library/ios/documentation/Foundation/Reference/NSJSONSerialization_Class/"><em>NSJSONSerialization</em> documention</a>. If an object doesn't meet those guidelines, it is simply converted to a string using the <em>description</em> selector.</p>
+
+<p>To use this code, include the header files and call <em>validJSONArray</em> on an <em>NSArray</em> or call <em>validJSONDictionary</em> on an <em>NSDictionary</em>. Those properties will return a cloned <em>NSArray</em> or <em>NSDictionary</em>, respectively, that is ready for JSON serialization.</p>
+
+<div data-gist-id="725e34393b0c846e2928"></div>
