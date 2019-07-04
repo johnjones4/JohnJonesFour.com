@@ -26,7 +26,7 @@ export default ({ data, pathContext }) => {
   const dateObj = new Date(Date.parse(date))
   console.log(post)
   return (
-    <Page slug='blog'>
+    <Page slug='blog' title={post.frontmatter.title} description={post.frontmatter.description}>
       <Container>
         <article>
           <h1>{post.frontmatter.title}</h1>

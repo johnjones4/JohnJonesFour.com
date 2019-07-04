@@ -65,7 +65,7 @@ export default class Contact extends Component {
 
   render () {
     return (
-      <Page slug='contact'>
+      <Page slug='contact' title='Contact'>
         <Container>
           <h1>Contact</h1>
           { this.state.response && (<Alert color={this.state.response.type}>{this.state.response.message}</Alert>)}

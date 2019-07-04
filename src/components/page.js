@@ -65,8 +65,13 @@ export default class Page extends Component {
     return (
       <div className={['page',this.props.slug || 'subpage'].join(' ')}>
         <Helmet>
+          <meta charset="utf-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <link href='https://fonts.googleapis.com/css?family=Poppins&display=swap' rel='stylesheet' />
           <script src='https://kit.fontawesome.com/a6878e746e.js'></script>
+          <title>{ this.props.title ? ('JohnJonesFour | ' + this.props.title) : 'JohnJonesFour'}</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          { this.props.description && (<meta content={this.props.description} name='description' />)}
         </Helmet>
         <Navbar fixed='top' expand='md' light>
           <NavbarBrand href='/'>JohnJonesFour</NavbarBrand>

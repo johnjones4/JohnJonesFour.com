@@ -31,6 +31,12 @@ module.exports = {
         user_id: '28315761@N06',
         method: 'flickr.people.getPublicPhotos'
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-23892666-1',
+      },
     }
   ]
 }

@@ -6,7 +6,7 @@ import {
 
 export default () => {
   return (
-    <Page slug='about'>
+    <Page slug='about' title='About'>
       <Container>
         <h1>About</h1>
         <img src='/headshot.png' className='img-fluid img-content' alt='Headshot of me' />

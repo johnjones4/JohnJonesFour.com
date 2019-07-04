@@ -14,7 +14,7 @@ import './work.scss'
 export default ({data}) => {
   console.log()
   return (
-    <Page slug='work'>
+    <Page slug='work' title="What I've Done">
       <Container>
         <h1>What I've Done</h1>
         {

@@ -40,7 +40,7 @@ export default class Photography extends Component {
     const selectedPhotoA = this.props.data.allFlickrPhoto.edges[this.state.selectedPhotos.a].node
     const selectedPhotoB = this.state.selectedPhotos.b ? this.props.data.allFlickrPhoto.edges[this.state.selectedPhotos.b].node : null
     return (
-      <Page slug='photography'>
+      <Page slug='photography' title='Photography'>
         <div className='photography-selected-photo-wrapper'>
           <button onClick={() => this.setNextPhoto(this.state.selectedPhotos[this.state.activePhoto] - 1)} className={['photography-page-button','photography-page-button-previous','photography-page-button-' + (this.state.selectedPhotos[this.state.activePhoto] > 0 ? 'active' : 'inactive')].join(' ')}>
             <i className='fas fa-angle-left'>
