@@ -17,12 +17,14 @@ export default class Contact extends Component {
       name: '',
       email: '',
       message: '',
-      response: null
+      response: null,
+      sending: false
     }
   }
 
   formSubmitted (event) {
-    event.preventDefault();
+    event.preventDefault()
+    this.setState({sending: true})
     fetch('https://xp88goliw6.execute-api.us-east-1.amazonaws.com/prod/contact_form', {
       method: 'POST',
       mode: 'cors',
@@ -45,7 +47,8 @@ export default class Contact extends Component {
           response: {
             type: 'primary',
             message: 'Thank you for reaching out! I will be in touch soon.'
-          }
+          },
+          sending: false
         })
       })
       .catch(err => {
@@ -53,7 +56,8 @@ export default class Contact extends Component {
           response: {
             type: 'danger',
             message: err.message
-          }
+          },
+          sending: false
         })
       })
     return false
@@ -78,7 +82,7 @@ export default class Contact extends Component {
               <Label for='message'>Message</Label>
               <Input type='textarea' name='message' rows="8" value={this.state.message} onChange={(event) => this.setState({message: event.target.value})} />
             </FormGroup>
-            <Button>Contact Me</Button>
+            <Button>Contact Me{sending && ' (Processing)'}</Button>
           </Form>
         </Container>
       </Page>
