@@ -1,0 +1,25 @@
+@import '../bootstrap/bootstrap.scss';
+
+.index {
+  .work-table {
+    padding-top: 5%;
+    .work-icon {
+      text-align: center;
+      font-size: 200px;
+      a {
+        color: $dark;
+      }
+      @include media-breakpoint-down(md) { 
+        font-size: 164px;
+      }
+      @include media-breakpoint-down(sm) { 
+        // font-size: 128px;
+      }
+    }
+    .work-description {
+      text-align: center;
+      font-weight: bold;
+      
+    }
+  }
+}

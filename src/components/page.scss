@@ -1,11 +1,20 @@
 @import '../bootstrap/bootstrap.scss';
 
 .navbar {
-  background: white;
+  background: rgba(255,255,255,0.85);
+  border-bottom: solid white 1px;
 }
 
 div[role=main] {
   padding-top: 100px;
+
+  @include media-breakpoint-down(sm) { 
+    padding-top: 60px;
+  }
+
+  .container.container-narrow {
+    max-width: 960px;
+  }
 
   .img-content {
     float: left;
