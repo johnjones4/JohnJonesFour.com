@@ -20,7 +20,7 @@ $photos-size-mobile: $photos-height-mobile - $photos-padding-top - $photos-paddi
     }
     .photography-selected-photo-wrapper {
       position: absolute;
-      top: 0;
+      top: 10px;
       left: 10px;
       right: 10px;
       bottom: $photos-height-desktop;
