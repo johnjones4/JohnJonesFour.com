@@ -82,7 +82,7 @@ export default class Contact extends Component {
               <Label for='message'>Message</Label>
               <Input type='textarea' name='message' rows="8" value={this.state.message} onChange={(event) => this.setState({message: event.target.value})} />
             </FormGroup>
-            <Button>Contact Me{sending && ' (Processing)'}</Button>
+            <Button>Contact Me{this.state.sending && ' (Processing)'}</Button>
           </Form>
         </Container>
       </Page>
