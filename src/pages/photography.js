@@ -41,7 +41,7 @@ export default class Photography extends Component {
   }
 
   loadImages (baseIndex) {
-    for (let i = Math.max(0, baseIndex - 2); i < Math.min(this.props.data.allFlickrPhoto.edges.length, baseIndex + 2); i++) {
+    for (let i = Math.max(0, baseIndex - 10); i < Math.min(this.props.data.allFlickrPhoto.edges.length, baseIndex + 10); i++) {
       const url = this.props.data.allFlickrPhoto.edges[i].node.url_l
       if (this.preloadedImages.indexOf(url) <= 0) {
         const image = new Image()
