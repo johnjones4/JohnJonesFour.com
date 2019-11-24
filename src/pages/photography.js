@@ -14,10 +14,14 @@ export default class Photography extends Component {
       },
       activePhoto: 'a',
     }
+
     this.photographyPhotos = React.createRef()
+
+    this.preloadedImages = []
   }
 
   setNextPhoto (index) {
+    this.loadImages(index)
     if (index < 0 || index >= this.props.data.allFlickrPhoto.edges.length) {
       return
     }
@@ -34,6 +38,17 @@ export default class Photography extends Component {
       left: button.offsetLeft - (window.innerWidth / 2) + (button.offsetWidth / 2),
       behavior: 'smooth'
     })
+  }
+
+  loadImages (baseIndex) {
+    for (let i = Math.max(0, baseIndex - 10); i < Math.min(this.props.data.allFlickrPhoto.edges.length, baseIndex + 10); i++) {
+      const url = this.props.data.allFlickrPhoto.edges[i].node.url_l
+      if (this.preloadedImages.indexOf(url) <= 0) {
+        const image = new Image()
+        image.src = url
+        this.preloadedImages.push(url)
+      }
+    }
   }
 
   render () {
