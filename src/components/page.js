@@ -29,6 +29,10 @@ const navItems = [
   {
     href: '/contact',
     name: 'Contact'
+  },
+  {
+    href: '/archive',
+    name: 'Archive'
   }
 ]
 

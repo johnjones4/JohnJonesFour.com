@@ -12,7 +12,6 @@ import _ from 'lodash'
 import './work.scss'
 
 export default ({data}) => {
-  console.log()
   return (
     <Page slug='work' title="What I've Done">
       <Container>
