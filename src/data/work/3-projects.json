@@ -1,5 +1,5 @@
 {
-  "label": "Projects",
+  "label": "Side Projects",
   "items": [
     {
       "url": "https://getreciplay.com/",
@@ -7,19 +7,14 @@
       "note": "App"
     },
     {
-      "url": "https://github.com/johnjones4/InBrief",
-      "label": "InBrief",
+      "url": "https://github.com/johnjones4/Standard-Notes-Clipper",
+      "label": "Standard Notes Clipper",
       "note": "Open Source"
     },
     {
-      "url": "https://github.com/johnjones4/grammarlint",
-      "label": "GrammarLint",
-      "note": "Open Source"
-    },
-    {
-      "url": "https://theinitialcommit.com/",
-      "label": "_theInitialCommit",
-      "note": "Blog"
+      "url": "https://github.com/johnjones4/Dresser-Top-Dashboard",
+      "label": "Dresser Top Dashboard",
+      "note": "Raspberry Pi/Open Source"
     }
   ]
 }

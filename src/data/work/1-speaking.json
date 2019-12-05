@@ -2,34 +2,39 @@
   "label": "Speaking",
   "items": [
     {
+      "url": "https://githubuniverse.com/",
+      "label": "GitHub Universe",
+      "note": "2018 & 2019"
+    },
+    {
       "url": "https://www.goodtechfest.com/",
       "label": "Good Tech Fest",
-      "note": null
+      "note": "2018 & 2019"
     },
     {
       "url": "http://www.cvent.com/events/code-for-america-summit-2018/event-summary-e12d85b157b94d69b80d8911cc641d36.aspx",
       "label": "Code for America Summit",
-      "note": null
+      "note": "2018"
     },
     {
       "url": "https://www.nten.org/ntc/",
       "label": "Nonprofit Technology Conference",
-      "note": null
+      "note": "2018"
     },
     {
       "url": "https://allthingsopen.org/",
       "label": "All Things Open",
-      "note": null
+      "note": "2018"
     },
     {
       "url": "https://www.drupalgovcon.org/drupal-govcon-2016/sessions/empowering-site-managers-atomic-design-and-drupal-paragraphs",
       "label": "Drupal GovCon",
-      "note": null
+      "note": "2015 & 2016"
     },
     {
       "url": "https://generalassemb.ly/education/break-into-mobile-development-appy-hour-with-ga-uber",
       "label": "General Assembly",
-      "note": null
+      "note": "2014"
     }
   ]
 }
