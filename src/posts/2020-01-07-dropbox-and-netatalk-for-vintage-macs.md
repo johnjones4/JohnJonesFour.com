@@ -33,7 +33,7 @@ In the days of OS 9, the preferred way for accessing network files was using App
 
 ## Dropbox Access
 
-The last step of this process was to get Dropbox syncing on the server. To do that, I followed another detailed step-by-step tutorial on Tech Republic [here](https://www.techrepublic.com/article/how-to-install-and-run-dropbox-from-a-headless-linux-server/). Once I had Dropbox up an running as a background process on the server, I left it overnight so it could sync down my entire account, which is about 700 GB. With this complete, the server now will constantly keep an updated version of my Dropbox account and any local changes made will sync up.
+The last step of this process was to get Dropbox syncing on the server. To do that, I followed another detailed step-by-step tutorial on Tech Republic [here](https://www.techrepublic.com/article/how-to-install-and-run-dropbox-from-a-headless-linux-server/). Once I had Dropbox up and running as a background process on the server, I left it overnight so it could sync down my entire account, which is about 700 GB. With this complete, the server now will constantly keep an updated version of my Dropbox account and any local changes made will sync up.
 
 ## Outcome
 
