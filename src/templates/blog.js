@@ -33,7 +33,6 @@ export default ({ data, pathContext }) => {
         <Row className='justify-content-md-center'>
           <Col lg='8'>
             <article className='blogpost'>
-              { post.frontmatter.image && (<img src={post.frontmatter.image} className='img-fluid' />) }
               <h1>{post.frontmatter.title}</h1>
               { post.frontmatter.description && (<h2>{post.frontmatter.description}</h2>) }
               <h3>
@@ -97,7 +96,6 @@ export const query = graphql`
           src,
           name
         },
-        image,
         github,
         githubs
       }
