@@ -8,7 +8,7 @@ There's a small, but growing, niché of nerds out there who enjoy an activity ap
 
 ![OS 9 Desktop](/images/OS9.png)
 
-I consider myself one of these vintage computing enthusiasts - particularly with Mac hardware. In particular, I loved the "classic" Mac OSes, which ended with OS 9 before the release of the completely rebuilt OS X. While OS X lives on to be the more stable, versatile, and scalable OS that the classic Mac OS architecture could not be, there's an appreciable element of design and utilitarianism with these relics. They didn't do multitasking well – forcing you to do one task at a time. The interface was quirky, but if you took the time to learn it, then you could get around much faster than you can with modern interfaces. But above all else, sharing a similar sentiment with those who fix up old muscle cars, it's just plain fun to use old machines and software.
+I consider myself one of these vintage computing enthusiasts - particularly with Mac hardware and the "classic" Mac OSes, which ended with OS 9 before the release of the completely rebuilt OS X. While OS X lives on to be the more stable, versatile, and scalable OS that the classic Mac OS architecture could not be, there's an appreciable element of design and utilitarianism with these relics. They didn't do multitasking well – forcing you to do one task at a time. The interface was quirky, but if you took the time to learn it, then you could get around much faster than you can with modern interfaces. But above all else, sharing a similar sentiment with those who fix up old muscle cars, it's just plain fun to use old machines and software.
 
 ![iBook](/images/ibook.jpg)
 
