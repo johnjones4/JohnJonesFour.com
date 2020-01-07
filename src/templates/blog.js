@@ -25,17 +25,19 @@ const months = [
 export default ({ data, pathContext }) => {
   const post = data.markdownRemark
   const { date } = pathContext
-  const dateObj = new Date(Date.parse(date))
+  const dateparts = date.split('-').map(d => parseInt(d,10))
+  const dateObj = new Date(dateparts[0], dateparts[1] - 1, dateparts[2])
   return (
     <Page slug='blog' title={post.frontmatter.title} description={post.frontmatter.description}>
       <Container>
         <Row className='justify-content-md-center'>
           <Col lg='8'>
             <article className='blogpost'>
+              { post.frontmatter.image && (<img src={post.frontmatter.image} className='img-fluid' />) }
               <h1>{post.frontmatter.title}</h1>
               { post.frontmatter.description && (<h2>{post.frontmatter.description}</h2>) }
               <h3>
-                <small class="text-muted">
+                <small className="text-muted">
                   {months[dateObj.getMonth()]} {dateObj.getDate()}, {dateObj.getFullYear()}
                 </small>
               </h3>
@@ -95,6 +97,7 @@ export const query = graphql`
           src,
           name
         },
+        image,
         github,
         githubs
       }

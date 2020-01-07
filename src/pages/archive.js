@@ -11,7 +11,8 @@ export default ({data}) => {
         {
           data.allMarkdownRemark.edges.map(({node}) => {
             console.log(node)
-            const date = new Date(Date.parse(node.fields.date))
+            const dateparts = node.fields.date.split('-').map(d => parseInt(d,10))
+            const date = new Date(dateparts[0], dateparts[1] - 1, dateparts[2])
             return (
               <article>
                 <h2>
