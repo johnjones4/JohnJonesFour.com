@@ -1,20 +1,26 @@
 {
-  "label": "Side Projects",
+  "label": "Projects",
   "items": [
     {
       "url": "https://getreciplay.com/",
       "label": "Reciplay",
-      "note": "App"
+      "note": "App",
+      "teaser": "The best cookbook is the one curated by you. Reciplay makes that happen by saving and organizing all of the great recipes that you find on the web. All the recipes you love are at your fingertips with Reciplay.",
+      "image": "/images/reciplay.jpg"
     },
     {
       "url": "https://github.com/johnjones4/Standard-Notes-Clipper",
       "label": "Standard Notes Clipper",
-      "note": "Open Source"
+      "note": "Open Source",
+      "teaser": "An open source browser add-on (Firefox and Chrome) that allows you to clip web pages to your Standard Notes account.",
+      "image": "/images/snnotes-preview.gif"
     },
     {
       "url": "https://github.com/johnjones4/Dresser-Top-Dashboard",
       "label": "Dresser Top Dashboard",
-      "note": "Raspberry Pi/Open Source"
+      "note": "Raspberry Pi/Open Source",
+      "teaser": null,
+      "image": null
     }
   ]
 }

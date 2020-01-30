@@ -2,34 +2,53 @@
   "label": "Writing",
   "items": [
     {
+      "url": "https://opensource.com/article/19/12/ways-volunteer",
+      "label": "4 Ways to Volunteer this Holiday Season",
+      "note": "OpenSource.com",
+      "teaser": "Looking to spread some holiday cheer? Donate your talents to open source organizations that help communities in need.",
+      "image": ""
+    },
+    {
       "url": "https://hackernoon.com/open-source-will-define-this-era-as-a-modern-renaissance-011e2g0y",
       "label": "Open Source Will Define This Era as A Modern Renaissance",
-      "note": "HackerNoon"
+      "note": "HackerNoon",
+      "teaser": "A hallmark of the Renaissance that mirrors today is a culture of sharing, and we see that in both times, innovators benefited from spaces and mediums to explore, share, and build upon each other.",
+      "image": null
     },
     {
       "url": "https://ssir.org/articles/entry/open_source_software_is_philanthropy",
       "label": "Open Source Software Is Philanthropy",
-      "note": "Stanford Social Innovation Review"
+      "note": "Stanford Social Innovation Review",
+      "teaser": "When properly supported, open source software can spark innovation, accelerate social good, and ultimately help change the world.",
+      "image": null
     },
     {
       "url": "https://medium.com/@johnjones4/an-opportunity-for-responsible-innovation-with-amazons-alexa-c23ac40bec46",
       "label": "An Opportunity For Responsible Innovation With Amazon’s Alexa",
-      "note": null
+      "note": null,
+      "teaser": "There is an opportunity to launch new enterprises, using Alexa as a springboard, oriented towards socially conscious, responsible action because of how integrated the IoT will be in our lives.",
+      "image": null
     },
     {
       "url": "/2016/12/31/where-the-internet-of-things-runs-aground/",
       "label": "Where The Internet of Things Runs Aground",
-      "note": null
+      "note": null,
+      "teaser": null,
+      "image": null
     },
     {
       "url": "/2016/11/12/algorithmic-journalism/",
       "label": "Algorithmic Journalism",
-      "note": null
+      "note": null,
+      "teaser": null,
+      "image": null
     },
     {
       "url": "https://medium.com/@johnjones4/basic-inspired-a-generation-of-technologists-what-will-inspire-the-next-408d26e361e1#.cf0579t1v",
       "label": "BASIC Inspired A Generation Of Technologists. What Will Inspire The Next?",
-      "note": "HackerNoon"
+      "note": "HackerNoon",
+      "teaser": null,
+      "image": null
     }
   ]
 }

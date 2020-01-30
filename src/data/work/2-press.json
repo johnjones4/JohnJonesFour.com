@@ -4,12 +4,16 @@
     {
       "url": "https://www.technative.io/_theinitialcommit-exploring-the-people-behind-the-open-source-projects",
       "label": "_TheInitialCommit: Exploring the People Behind the Open Source Projects",
-      "note": null
+      "note": null,
+      "teaser": null,
+      "image": null
     },
     {
       "url": "https://lifehacker.com/chefs-hat-lets-you-bookmark-and-organize-recipes-from-a-1739652127",
       "label": "Chef's Hat Featured on LifeHacker",
-      "note": null
+      "note": null,
+      "teaser": null,
+      "image": null
     }
   ]
 }

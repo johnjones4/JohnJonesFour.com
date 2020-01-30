@@ -108,6 +108,9 @@ export default class Page extends Component {
         <div role='main'>
           {this.props.children}
         </div>
+        <footer className='footer'>
+          Copyright { new Date().getFullYear() } &copy; John E. Jones IV
+        </footer>
       </div>
     )
   }

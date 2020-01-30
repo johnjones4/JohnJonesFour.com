@@ -1,25 +1,54 @@
 @import '../bootstrap/bootstrap.scss';
 
 .index {
-  .work-table {
-    padding-top: 5%;
-    .work-icon {
+  div[role=main] {
+    padding-top: 57px;
+  }
+  .home-section {
+    padding: 4% 0 5% 0;
+    border-bottom: solid 1px $secondary;
+    h2 {
       text-align: center;
-      font-size: 200px;
-      a {
-        color: $dark;
-      }
-      @include media-breakpoint-down(md) { 
-        font-size: 164px;
-      }
-      @include media-breakpoint-down(sm) { 
-        // font-size: 128px;
+      margin-bottom: 0.5em;
+      font-size: 3em;
+    }
+    .embed-responsive {
+      margin-bottom: 1em;
+    }
+    &.what-i-do {
+      background-color: $primary;
+      color: $white;
+      .work-table {
+        .work-icon {
+          text-align: center;
+          font-size: 150px;
+          a {
+            color: $white;
+          }
+          @include media-breakpoint-down(md) { 
+            font-size: 164px;
+          }
+          @include media-breakpoint-down(sm) { 
+            // font-size: 128px;
+          }
+        }
+        .work-description {
+          text-align: center;
+          font-weight: bold;
+          a {
+            color: $white;
+          }
+        }
       }
     }
-    .work-description {
-      text-align: center;
-      font-weight: bold;
-      
+    &.on-stage,&.in-code {
+      background-color: $gray-900;
+      color: $white;
+      .card {
+        background: none;
+        border-color: $secondary;
+      }
     }
   }
+  
 }

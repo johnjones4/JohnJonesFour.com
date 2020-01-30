@@ -26,7 +26,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `json`,
-        path: `./src/data/`,
+        path: `./src/data/`
       },
     },
     `gatsby-transformer-remark`,

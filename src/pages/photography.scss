@@ -8,6 +8,9 @@ $photos-size-desktop: $photos-height-desktop - $photos-padding-top - $photos-pad
 $photos-size-mobile: $photos-height-mobile - $photos-padding-top - $photos-padding-bottom;
 
 .page.photography {
+  .footer {
+    display: none;
+  }
   div[role=main] {
     position: fixed;
     left: 0;
