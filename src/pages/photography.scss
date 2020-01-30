@@ -1,18 +1,12 @@
 @import '../bootstrap/bootstrap.scss';
 
-$photos-height-desktop: 200px;
-$photos-height-mobile: 150px;
-$photos-padding-top: 30px;
-$photos-padding-bottom: 20px;
-$photos-size-desktop: $photos-height-desktop - $photos-padding-top - $photos-padding-bottom;
-$photos-size-mobile: $photos-height-mobile - $photos-padding-top - $photos-padding-bottom;
-
 .page.photography {
   div[role=main] {
     padding-top: 57px;
   }
   .photography-photo-button {
     background-size: cover;
+    background-position: center center;
     outline: none;
     padding: 100% 0 0 0;
     width: 100%;
