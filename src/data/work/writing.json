@@ -1,5 +1,6 @@
 {
   "label": "Writing",
+  "sort": 0,
   "items": [
     {
       "url": "https://opensource.com/article/19/12/ways-volunteer",
@@ -23,31 +24,10 @@
       "image": null
     },
     {
-      "url": "https://medium.com/@johnjones4/an-opportunity-for-responsible-innovation-with-amazons-alexa-c23ac40bec46",
-      "label": "An Opportunity For Responsible Innovation With Amazon’s Alexa",
-      "note": null,
-      "teaser": "There is an opportunity to launch new enterprises, using Alexa as a springboard, oriented towards socially conscious, responsible action because of how integrated the IoT will be in our lives.",
-      "image": null
-    },
-    {
-      "url": "/2016/12/31/where-the-internet-of-things-runs-aground/",
-      "label": "Where The Internet of Things Runs Aground",
-      "note": null,
-      "teaser": null,
-      "image": null
-    },
-    {
-      "url": "/2016/11/12/algorithmic-journalism/",
-      "label": "Algorithmic Journalism",
-      "note": null,
-      "teaser": null,
-      "image": null
-    },
-    {
       "url": "https://medium.com/@johnjones4/basic-inspired-a-generation-of-technologists-what-will-inspire-the-next-408d26e361e1#.cf0579t1v",
       "label": "BASIC Inspired A Generation Of Technologists. What Will Inspire The Next?",
       "note": "HackerNoon",
-      "teaser": null,
+      "teaser": "The ubiquity of BASIC — its presence on so many machines and the vast catalog of software and instructional tools — is what positioned it to inspire so many and make it a success.",
       "image": null
     }
   ]

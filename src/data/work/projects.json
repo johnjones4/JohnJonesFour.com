@@ -1,5 +1,6 @@
 {
   "label": "Projects",
+  "sort": 1,
   "items": [
     {
       "url": "https://getreciplay.com/",
@@ -19,7 +20,7 @@
       "url": "https://github.com/johnjones4/Dresser-Top-Dashboard",
       "label": "Dresser Top Dashboard",
       "note": "Raspberry Pi/Open Source",
-      "teaser": null,
+      "teaser": "This is a project that displays a simple personal dashboard as an image.",
       "image": null
     }
   ]

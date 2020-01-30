@@ -12,6 +12,9 @@ import _ from 'lodash'
 import './work.scss'
 
 export default ({data}) => {
+  data.allWorkJson.edges.sort((a, b) => {
+    return a.node.sort - b.node.sort
+  })
   return (
     <Page slug='work' title="What I've Done">
       <Container>
@@ -24,18 +27,19 @@ export default ({data}) => {
                   <Card>
                     <CardBody>
                       <h2>{section.node.label}</h2>
-                      <ul>
-                        { section.node.items.map((item, k) => (
-                          <li key={k}>
-                            <a href={item.url} target='_blank' rel='noopener noreferrer'>{item.label}</a>
-                            { item.note && (<span> ({item.note})</span>) }
-                          </li>
-                        ))}
-                      </ul>
+                      { section.node.items.map((item, k) => (
+                        <div>
+                          <a href={item.url} target='_blank' rel='noopener noreferrer'>
+                            <h4>{item.label}</h4>
+                          </a>
+                          <h5 className='text-muted'>{ item.note && (<span> ({item.note})</span>) }</h5>
+                          { item.teaser && (<p>{item.teaser}</p>) }
+                        </div>
+                      ))}
                     </CardBody>
                   </Card>
                 </Col>
-              )) }
+              ))}
             </Row>
           ))
         }
@@ -50,10 +54,12 @@ export const query = graphql`
       edges {
         node {
           label,
+          sort,
           items {
             url,
             label,
-            note
+            note,
+            teaser
           }
         }
       }
