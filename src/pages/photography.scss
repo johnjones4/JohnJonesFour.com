@@ -8,113 +8,156 @@ $photos-size-desktop: $photos-height-desktop - $photos-padding-top - $photos-pad
 $photos-size-mobile: $photos-height-mobile - $photos-padding-top - $photos-padding-bottom;
 
 .page.photography {
-  .footer {
-    display: none;
-  }
   div[role=main] {
+    padding-top: 57px;
+  }
+  .photography-photo-button {
+    background-size: cover;
+    outline: none;
+    padding: 100% 0 0 0;
+    width: 100%;
+    border: none;
+    margin: 10px 0;
+  }
+  .selected-photo-wrapper {
     position: fixed;
-    left: 0;
+    top: 0;
     right: 0;
     bottom: 0;
-    top: 60px;
-    padding: 0;
-    .photography-photo {
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    .selected-photo {
+      position: absolute;
+      top: 50px;
+      right: 50px;
+      bottom: 50px;
+      left: 50px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
     }
-    .photography-selected-photo-wrapper {
+    .selected-photo-close {
       position: absolute;
       top: 10px;
-      left: 10px;
-      right: 10px;
-      bottom: $photos-height-desktop;
-      @include media-breakpoint-down(sm) { 
-        bottom: $photos-height-mobile;
-      }
-      .photography-selected-photo {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: auto;
-        height: auto;
-        max-width: 100%;
-        max-height: 100%;
-        display: block;
-        margin: auto;
-        transition: opacity 0.5s;
-        border: solid 10px $light;
-        z-index: 0;
-        &.photography-selected-photo-active {
-          opacity: 1;
-        }
-        &.photography-selected-photo-inactive {
-          opacity: 0;
-        }
-      }
-      .photography-page-button {
-        position: absolute;
-        border: none;
-        outline: none;
-        font-size: 40px;
-        height: 40px;
-        margin: -20px 0 0 0;
-        top: 50%;
-        background: none;
-        transition: all 0.25s;
-        color: $dark;
-        z-index: 1;
-        &:hover {
-          color: $primary;
-        }
-        &.photography-page-button-inactive {
-          opacity: 0;
-          pointer-events: none;
-        }
-        &.photography-page-button-active {
-          opacity: 1;
-        }
-        &.photography-page-button-previous {
-          left: 0;
-        }
-        &.photography-page-button-next {
-          right: 0;
-        }
-      }
-    }
-    .photography-photos {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: $photos-padding-top 0 $photos-padding-bottom 0;
-      overflow-x: scroll;
-      overflow-y: hidden;
-      white-space: nowrap;
-      height: $photos-height-desktop;
-      @include media-breakpoint-down(sm) { 
-        height: $photos-height-mobile;
-      }
-      .photography-photo-button {
-        background-size: cover;
-        outline: none;
-        padding: 0;
-        margin: 0 10px;
-        transition: all 0.25s;
-        height: $photos-size-desktop;
-        width: $photos-size-desktop;
-        @include media-breakpoint-down(sm) { 
-          height: $photos-size-mobile;
-          width: $photos-size-mobile;
-          margin: 0 5px;
-        }
-        &.photography-photo-button-inactive {
-          border: solid 1px $light;
-        }
-        &.photography-photo-button-active {
-          border-color: $dark;
-        }
-      }
+      right: 20px;
+      padding: 0;
+      margin: 0;
+      color: white;
+      background: none;
+      outline: none;
+      border: none;
+      font-size: 30px;
     }
   }
+
+  // .footer {
+  //   display: none;
+  // }
+  // div[role=main] {
+  //   position: fixed;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   top: 60px;
+  //   padding: 0;
+  //   .photography-photo {
+  //     box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  //   }
+  //   .photography-selected-photo-wrapper {
+  //     position: absolute;
+  //     top: 10px;
+  //     left: 10px;
+  //     right: 10px;
+  //     bottom: $photos-height-desktop;
+  //     @include media-breakpoint-down(sm) { 
+  //       bottom: $photos-height-mobile;
+  //     }
+  //     .photography-selected-photo {
+  //       position: absolute;
+  //       top: 0;
+  //       left: 0;
+  //       right: 0;
+  //       bottom: 0;
+  //       width: auto;
+  //       height: auto;
+  //       max-width: 100%;
+  //       max-height: 100%;
+  //       display: block;
+  //       margin: auto;
+  //       transition: opacity 0.5s;
+  //       border: solid 10px $light;
+  //       z-index: 0;
+  //       &.photography-selected-photo-active {
+  //         opacity: 1;
+  //       }
+  //       &.photography-selected-photo-inactive {
+  //         opacity: 0;
+  //       }
+  //     }
+  //     .photography-page-button {
+  //       position: absolute;
+  //       border: none;
+  //       outline: none;
+  //       font-size: 40px;
+  //       height: 40px;
+  //       margin: -20px 0 0 0;
+  //       top: 50%;
+  //       background: none;
+  //       transition: all 0.25s;
+  //       color: $dark;
+  //       z-index: 1;
+  //       &:hover {
+  //         color: $primary;
+  //       }
+  //       &.photography-page-button-inactive {
+  //         opacity: 0;
+  //         pointer-events: none;
+  //       }
+  //       &.photography-page-button-active {
+  //         opacity: 1;
+  //       }
+  //       &.photography-page-button-previous {
+  //         left: 0;
+  //       }
+  //       &.photography-page-button-next {
+  //         right: 0;
+  //       }
+  //     }
+  //   }
+  //   .photography-photos {
+  //     position: absolute;
+  //     bottom: 0;
+  //     left: 0;
+  //     right: 0;
+  //     padding: $photos-padding-top 0 $photos-padding-bottom 0;
+  //     overflow-x: scroll;
+  //     overflow-y: hidden;
+  //     white-space: nowrap;
+  //     height: $photos-height-desktop;
+  //     @include media-breakpoint-down(sm) { 
+  //       height: $photos-height-mobile;
+  //     }
+  //     .photography-photo-button {
+  //       background-size: cover;
+  //       outline: none;
+  //       padding: 0;
+  //       margin: 0 10px;
+  //       transition: all 0.25s;
+  //       height: $photos-size-desktop;
+  //       width: $photos-size-desktop;
+  //       @include media-breakpoint-down(sm) { 
+  //         height: $photos-size-mobile;
+  //         width: $photos-size-mobile;
+  //         margin: 0 5px;
+  //       }
+  //       &.photography-photo-button-inactive {
+  //         border: solid 1px $light;
+  //       }
+  //       &.photography-photo-button-active {
+  //         border-color: $dark;
+  //       }
+  //     }
+  //   }
+  // }
 }
