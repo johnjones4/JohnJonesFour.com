@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Lean Into Your Side Projects"
-description: "Side projects off freedom of creation and exploration to developers, which is ultimately a needed creative outlet."
+description: "Side projects offer freedom of creation and exploration to developers, which is a needed creative outlet."
 ---
 
 There's a common refrain in
