@@ -36,7 +36,7 @@ module.exports = {
         api_key: process.env.FLICKR_API_KEY,
         user_id: '28315761@N06',
         method: 'flickr.photosets.getPhotos',
-        photoset_id: '72157712896159468',
+        photoset_id: '72157712896159468'
       }
     },
     {

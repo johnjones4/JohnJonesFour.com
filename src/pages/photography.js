@@ -30,7 +30,7 @@ export default class Photography extends Component {
             {
               this.props.data.allFlickrPhoto.edges.map((row, i) => {
                 return (
-                  <Col lg='2' md='2' sm='3' xs='6'>
+                  <Col lg='2' md='2' sm='3' xs='6' key={i}>
                     <button key={i} className='photography-photo-button' onClick={() => this.selectPhoto(this.props.data.allFlickrPhoto.edges[i])} style={{backgroundImage: 'url(' + row.node.url_z + ')'}}>
                       <span className='sr-only'>{row.node.title}</span>
                     </button>
@@ -43,7 +43,7 @@ export default class Photography extends Component {
         { this.state.selectedPhoto && (
           <div class='selected-photo-wrapper' onClick={() => this.selectPhoto(null)}>
             <button className='selected-photo-close' onClick={() => this.selectPhoto(null)}>&times;</button>
-            <div class='selected-photo' style={{backgroundImage: 'url(' + this.state.selectedPhoto.node.url_z + ')'}}></div>
+            <div class='selected-photo' style={{backgroundImage: 'url(' + this.state.selectedPhoto.node.url_l + ')'}}></div>
           </div>
         )}``
       </Page>
