@@ -6,6 +6,7 @@ import {
   Col
 } from 'reactstrap'
 import './blog.scss'
+import 'prismjs/themes/prism-solarizedlight.css'
 
 const months = [
   'January',
