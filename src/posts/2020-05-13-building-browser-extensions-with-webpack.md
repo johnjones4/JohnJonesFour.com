@@ -37,6 +37,8 @@ control the various parts of the extension. Those are:
 -   **Configuration:** Usually an HTML file plus one or more JS files to 
     present a user configuration interface.
 
+![Preview of my code](/images/code.png)
+
 Therefore, we structure our project so that each of these three areas of
 concerns have their own directory. In addition, we have a `manifest.json`
 file that browsers read to configure the extension, and there's also a 
