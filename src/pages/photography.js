@@ -16,10 +16,6 @@ export default class Photography extends Component {
       category: null,
       categories: []
     }
-    this.props.data.allPhotographyJson.edges.forEach(({ node }) => {
-      const img = new Image()
-      img.src = `/photography/${node.filename}`
-    })
   }
 
   static getDerivedStateFromProps(props, state) {
