@@ -7,6 +7,7 @@ import {
   Row,
   Col
 } from 'reactstrap'
+import prefetchImages from 'prefetch-image'
 
 export default class Photography extends Component {
   constructor (props) {
@@ -16,6 +17,7 @@ export default class Photography extends Component {
       category: null,
       categories: []
     }
+    prefetchImages(this.props.data.allPhotographyJson.edges.map(({ node }) => `/photography/${node.filename}`))
   }
 
   static getDerivedStateFromProps(props, state) {
