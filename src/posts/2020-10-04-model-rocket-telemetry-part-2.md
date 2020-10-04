@@ -3,9 +3,8 @@ layout: post
 title: "Capturing Model Rocket Telemetry Using a Raspberry Pi Zero (Part 2)"
 description: "Written by someone who has watched \"Apollo 13\" more times than he'd like to admit."
 youtube: z-oKkJN51v8
+note: "To see how I designed and built this rocket, check out <a href=\"/2020/10/03/model-rocket-telemetry-part-1/\">Part 1</a>"
 ---
-
-**To see how I designed and built this rocket, check out [Part 1](/2020/10/03/model-rocket-telemetry-part-1/)**
 
 As we're driving out to our permitted launch site in Leesburg, VA, my wife turns to me and asks, "did you intentionally wear a yellow and blue striped rugby shirt to match your yellow and blue striped rocket?" I look down, and realize that, yes I had indeed accidentally dressed exactly like my rocket. I wonder if that ever happens to Elon?
 

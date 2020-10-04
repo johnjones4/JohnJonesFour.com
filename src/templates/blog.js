@@ -3,7 +3,8 @@ import Page from '../components/page'
 import {
   Container,
   Row,
-  Col
+  Col,
+  Alert
 } from 'reactstrap'
 import './blog.scss'
 import 'prismjs/themes/prism-solarizedlight.css'
@@ -49,6 +50,11 @@ export default class Blog extends Component {
                     {months[dateObj.getMonth()]} {dateObj.getDate()}, {dateObj.getFullYear()}
                   </small>
                 </h3>
+                { post.frontmatter.note && (
+                  <Alert color='dark'>
+                    <span dangerouslySetInnerHTML={{ __html: post.frontmatter.note }} />    
+                  </Alert>
+                ) }
                 { post.frontmatter.youtube && (
                   <div class='embed-responsive embed-responsive-16by9'>
                     <iframe title='Embedded video' className='embed-responsive-item' src={`https://www.youtube.com/embed/${post.frontmatter.youtube}?rel=0`} allowfullscreen></iframe>
@@ -101,7 +107,8 @@ export const query = graphql`
         },
         github,
         githubs,
-        youtube
+        youtube,
+        note
       }
     }
   }
