@@ -7,7 +7,7 @@ import {
 } from 'reactstrap'
 import './blog.scss'
 import 'prismjs/themes/prism-solarizedlight.css'
-import 'github-repo-widget.js'
+// import 'github-repo-widget.js'
 
 const months = [
   'January',
@@ -27,7 +27,7 @@ const months = [
 export default class Blog extends Component {
 
   componentDidMount() {
-    window.GithubRepoWidget.init()
+    // window.GithubRepoWidget.init()
   }
 
   render () {
