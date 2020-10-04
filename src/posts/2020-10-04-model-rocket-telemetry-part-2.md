@@ -22,7 +22,7 @@ Ida Lee Park in Leesburg, VA allows rocket launches up to 400 feet with a permit
 
 ![Launch 1](/images/rocket/launch1.png)
 
-The first launch was a huge success. The rocket reached 110.3 meters (~362 feet), which beat my simulation's expectations of 90 meters, and it reached a peak velocity of 41.69 meters per second (~93 mph) at 1.44 seconds into the flight. We can see the rocket started to descend very quickly after apogee, and the chute deployed successfully 7.5 seconds into the flight. From there, the chute allowed for a linear rate of descent to a gentle field landing.
+The first launch was a huge success. The rocket reached 110.3 meters (~362 feet), which beat my simulation's prediction of 90 meters, and it reached a peak velocity of 41.69 meters per second (~93 mph) at 1.44 seconds into the flight. We can see the rocket started to descend very quickly after apogee, and the chute deployed successfully 7.5 seconds into the flight. From there, the chute allowed for a linear rate of descent to a gentle field landing.
 
 ### Launch 2
 
