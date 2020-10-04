@@ -3,10 +3,10 @@
   "sort": 0,
   "items": [
     {
-      "url": "https://opensource.com/article/19/12/ways-volunteer",
-      "label": "4 Ways to Volunteer this Holiday Season",
-      "note": "OpenSource.com",
-      "teaser": "Looking to spread some holiday cheer? Donate your talents to open source organizations that help communities in need.",
+      "url": "/2020/10/04/model-rocket-telemetry-part-2/",
+      "label": "Capturing Model Rocket Telemetry Using a Raspberry Pi Zero (Part 2)",
+      "note": null,
+      "teaser": "Written by someone who has watched \"Apollo 13\" more times than he'd like to admit.",
       "image": ""
     },
     {
@@ -15,6 +15,13 @@
       "note": "HackerNoon",
       "teaser": "A hallmark of the Renaissance that mirrors today is a culture of sharing, and we see that in both times, innovators benefited from spaces and mediums to explore, share, and build upon each other.",
       "image": null
+    },
+    {
+      "url": "https://opensource.com/article/19/12/ways-volunteer",
+      "label": "4 Ways to Volunteer this Holiday Season",
+      "note": "OpenSource.com",
+      "teaser": "Looking to spread some holiday cheer? Donate your talents to open source organizations that help communities in need.",
+      "image": ""
     },
     {
       "url": "https://ssir.org/articles/entry/open_source_software_is_philanthropy",

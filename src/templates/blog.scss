@@ -1,7 +1,22 @@
-.blogpost img {
+.blogpost img,
+.blogpost .embed-responsive {
+  max-width: 130%;
   width: auto;
-  max-width: 100%;
   height: auto;
   display: block;
-  margin: auto;
+  margin: auto -15%;
+}
+
+.blogpost .embed-responsive {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .blogpost img,
+  .blogpost .embed-responsive {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
 }

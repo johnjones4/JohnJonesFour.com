@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Page from '../components/page'
 import {
   Container,
@@ -7,6 +7,7 @@ import {
 } from 'reactstrap'
 import './blog.scss'
 import 'prismjs/themes/prism-solarizedlight.css'
+import 'github-repo-widget.js'
 
 const months = [
   'January',
@@ -23,67 +24,68 @@ const months = [
   'December'
 ]
 
-export default ({ data, pathContext }) => {
-  const post = data.markdownRemark
-  const { date } = pathContext
-  const dateparts = date.split('-').map(d => parseInt(d,10))
-  const dateObj = new Date(dateparts[0], dateparts[1] - 1, dateparts[2])
-  return (
-    <Page slug='blog' title={post.frontmatter.title} description={post.frontmatter.description}>
-      <Container>
-        <Row className='justify-content-md-center'>
-          <Col lg='8'>
-            <article className='blogpost'>
-              <h1>{post.frontmatter.title}</h1>
-              { post.frontmatter.description && (<h2>{post.frontmatter.description}</h2>) }
-              <h3>
-                <small className="text-muted">
-                  {months[dateObj.getMonth()]} {dateObj.getDate()}, {dateObj.getFullYear()}
-                </small>
-              </h3>
-              <div
-                className="post__body"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-              />
-              <hr/>
-              { post.frontmatter.links && (
-                <div>
-                  <h4>Links:</h4>
-                  <ul>
-                    { post.frontmatter.links.map(({src, name}, i) => (<li>
-                      <a href={src} target='_blank' rel='noopener noreferrer'>{name}</a>
-                    </li>)) }
-                  </ul>
-                </div>
-              ) }
-              { post.frontmatter.github && (
-                <div>
-                  <p>
-                    <strong>GitHub Project: </strong>
-                    <a href={'https://github.com/' + post.frontmatter.github} rel='noopener noreferrer'>
-                      {'https://github.com/' + post.frontmatter.github}
-                    </a>
-                  </p>
-                </div>
-              ) }
-              { post.frontmatter.githubs && (
-                <div>
-                  <h4>GitHub Projects:</h4>
-                  <ul>
+export default class Blog extends Component {
+
+  componentDidMount() {
+    window.GithubRepoWidget.init()
+  }
+
+  render () {
+    const { data, pathContext } = this.props
+    const post = data.markdownRemark
+    const { date } = pathContext
+    const dateparts = date.split('-').map(d => parseInt(d,10))
+    const dateObj = new Date(dateparts[0], dateparts[1] - 1, dateparts[2])
+    return (
+      <Page slug='blog' title={post.frontmatter.title} description={post.frontmatter.description}>
+        <Container>
+          <Row className='justify-content-md-center'>
+            <Col lg='8'>
+              <article className='blogpost'>
+                <h1>{post.frontmatter.title}</h1>
+                { post.frontmatter.description && (<h2>{post.frontmatter.description}</h2>) }
+                <h3>
+                  <small className="text-muted">
+                    {months[dateObj.getMonth()]} {dateObj.getDate()}, {dateObj.getFullYear()}
+                  </small>
+                </h3>
+                { post.frontmatter.youtube && (
+                  <div class='embed-responsive embed-responsive-16by9'>
+                    <iframe title='Embedded video' className='embed-responsive-item' src={`https://www.youtube.com/embed/${post.frontmatter.youtube}?rel=0`} allowfullscreen></iframe>
+                  </div>
+                ) }
+                <div
+                  className='post__body'
+                  dangerouslySetInnerHTML={{ __html: post.html }}
+                />
+                <hr/>
+                { post.frontmatter.links && (
+                  <div>
+                    <h4>Links:</h4>
+                    <ul>
+                      { post.frontmatter.links.map(({src, name}, i) => (<li>
+                        <a href={src} target='_blank' rel='noopener noreferrer'>{name}</a>
+                      </li>)) }
+                    </ul>
+                  </div>
+                ) }
+                { post.frontmatter.github && (
+                  <div className='github-widget' data-repo={post.frontmatter.github} />
+                ) }
+                { post.frontmatter.githubs && (
+                  <div>
                     { post.frontmatter.githubs.map((github, i) => (<li>
-                      <a href={'https://github.com/' + github} target='_blank' rel='noopener noreferrer'>
-                        {'https://github.com/' + github}
-                      </a>
+                      <div className='github-widget' data-repo={github} key={i} />
                     </li>)) }
-                  </ul>
-                </div>
-              ) }
-            </article>
-          </Col>
-        </Row>
-      </Container>
-    </Page>
-  )
+                  </div>
+                ) }
+              </article>
+            </Col>
+          </Row>
+        </Container>
+      </Page>
+    )
+  }
 }
 
 export const query = graphql`
@@ -98,7 +100,8 @@ export const query = graphql`
           name
         },
         github,
-        githubs
+        githubs,
+        youtube
       }
     }
   }
