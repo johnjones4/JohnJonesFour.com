@@ -21,6 +21,10 @@ div[role=main] {
     margin: 0 10px 10px 0;
     border: solid $dark 1px;
   }
+
+  ul li p {
+    margin-bottom: 0;
+  }
 }
 
 .footer {
