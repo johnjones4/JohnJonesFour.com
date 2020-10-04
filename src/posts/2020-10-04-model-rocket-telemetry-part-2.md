@@ -34,7 +34,7 @@ Launch 2 was less of a success. While the ascent went smoothly, telemetry was lo
 
 ![Rocket after launch](/images/rocket/recovery.jpg)
 
-The second launch reveal three major issues that need to be resolved: 
+The second launch revealed three major issues that need to be resolved: 
 
 1. The shock cord is not strong enough to absorb the force caused by separation, likely because of how heavy the payload is. In a future upgrade I will need to double-up the cords OR use two parachutes for each component to let them descend separately.
 2. When the payload section hit the ground, it drove the coupler way into the body tube. Upon impact, the battery bracket absorbed the force and shattered. However all of the electronics survived. Part of the coupler also broke off when I attempted to pull the it out of the payload section, so this will all need to be redesigned to better absorb hard landings.
