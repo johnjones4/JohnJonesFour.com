@@ -14,10 +14,10 @@ import {
 } from 'reactstrap'
 
 const navItems = [
-  {
-    href: '/about',
-    name: 'About'
-  },
+  // {
+  //   href: '/about',
+  //   name: 'About'
+  // },
   {
     href: '/photography',
     name: 'Photography'
