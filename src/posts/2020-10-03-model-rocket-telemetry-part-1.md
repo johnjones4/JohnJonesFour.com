@@ -6,7 +6,7 @@ github: johnjones4/white-vest
 note: "To see the results of launching this, check out <a href=\"/2020/10/04/model-rocket-telemetry-part-2/\">Part 2</a>"
 ---
 
-[Q&A on Hacker News about this project](https://news.ycombinator.com/item?id=24679435#24682041)
+[Q&A on Hacker News about this project](https://news.ycombinator.com/item?id=24679435)
 
 ![The Rocket!](/images/rocket/rocket_header.jpg)
 
