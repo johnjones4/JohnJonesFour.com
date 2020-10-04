@@ -6,6 +6,8 @@ github: johnjones4/white-vest
 note: "To see the results of launching this, check out <a href=\"/2020/10/04/model-rocket-telemetry-part-2/\">Part 2</a>"
 ---
 
+[Q&A on Hacker News about this project](https://news.ycombinator.com/item?id=24679435#24682041)
+
 ![The Rocket!](/images/rocket/rocket_header.jpg)
 
 It seems like everyone's getting back into old hobbies in the time of COVID-19. For me, that's come as model rocketry, something I spent quite a bit of time doing growing up in the Appalachian Mountains of Pennsylvania. On a whim, I bought a model rocket a few weeks back, built it, and launched it while visiting home in PA. Armed with excitement from this rediscovered hobby – along with the admiration of two young nieces who were sure the rocket was going to the moon – I decided it was time to kick things up a notch and custom build a rocket and telemetry module. 

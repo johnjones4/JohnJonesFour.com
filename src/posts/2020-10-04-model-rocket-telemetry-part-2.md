@@ -6,6 +6,8 @@ youtube: z-oKkJN51v8
 note: "To see how I designed and built this rocket, check out <a href=\"/2020/10/03/model-rocket-telemetry-part-1/\">Part 1</a>"
 ---
 
+[Q&A on Hacker News about this project](https://news.ycombinator.com/item?id=24679435#24682041)
+
 As we're driving out to our launch site in Leesburg, VA, my wife turns to me and asks, "did you intentionally wear a yellow and blue striped rugby shirt to match your yellow and blue striped rocket?" I look down, and realize that, yes I had indeed accidentally dressed exactly like my rocket. I wonder if that ever happens to Elon?
 
 ## Launches
