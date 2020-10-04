@@ -12,6 +12,7 @@ As we're driving out to our launch site in Leesburg, VA, my wife turns to me and
 
 ![Launch images](/images/rocket/launch.jpg)
 
+Very special thank you to my exceptionally patient wife who tagged along, captured these great pictures, and ended up actually having a lot of fun with her very nerdy husband.
 
 Ida Lee Park in Leesburg, VA allows rocket launches up to 400 feet with a permit, so I applied earlier in September for an October 3rd launch and received fast approval. With the day upon us, my wife and I made the 40 minute drive to Leesburg (apparently in uniform?), set up in our designated part of the park, and got to work.
 
