@@ -55,6 +55,19 @@ export default ({data}) => (
         </Row>
         </Container>
       </section>
+      <section className='home-section on-air'>
+        <Container>
+          <h2>On Air</h2>
+          <div className='embed-responsive embed-responsive-16by9'>
+            <iframe title='The Pi Cast: Pi-powered Rockets, Cyberpunk 2077 Pi Mod, Pi Gifting' className='embed-responsive-item' src='https://www.youtube.com/embed/JH-MxnDnmGw' frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
+          </div>
+          <p>
+            In the summer of 2020, I <a href='/2020/10/03/model-rocket-telemetry-part-1/'>designed and built</a> a custom telemetry module for a model 
+            rocket and then <a href='/2020/10/04/model-rocket-telemetry-part-2/'>successfully launched it.</a> After posting about it, the awesome team 
+            at <a href='https://www.tomshardware.com/' target='_blank' rel='noreferrer'>Tom's Hardware</a> had me on as a guest on their program Pi Cast.
+          </p>
+        </Container>
+      </section>
       <section className='home-section on-stage'>
         <Container>
           <h2>On Stage</h2>
