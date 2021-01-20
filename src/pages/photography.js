@@ -17,7 +17,7 @@ export default class Photography extends Component {
       category: null,
       categories: []
     }
-    prefetchImages(this.props.data.allPhotographyJson.edges.map(({ node }) => `/photography/${node.filename}`))
+    prefetchImages(this.props.data.allPhotographyJson.edges.map(({ node }) => `/photography/optimized/${node.filename}`))
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -57,14 +57,14 @@ export default class Photography extends Component {
         <Container fluid>
           <Row className='photography-gallery'>
             <Col sm={{ size: 12, order: 1 }} md={{ size: 10, order: 2 }} className='photography-col' >
-              <img className='photography-photo' src={`/photography/${photo.filename}`} alt={photo.caption} />
+              <img className='photography-photo' src={`/photography/optimized/${photo.filename}`} alt={photo.caption} />
             </Col>
             <Col xs={{ size: 6, order: 2 }} sm={{ size: 6, order: 2 }}  md={{ size: 1, order: 1 }} className='photography-col'>
               { previous && (<button
                 className='photography-button photography-button-previous'
                 onClick={() => this.setState({selectedPhotoIndex: this.state.selectedPhotoIndex - 1})} 
                 style={{
-                  backgroundImage: previous ? `url('/photography/${previous.filename}')` : null
+                  backgroundImage: previous ? `url('/photography/optimized/${previous.filename}')` : null
                 }}
               >
                 Previous
@@ -75,7 +75,7 @@ export default class Photography extends Component {
                 className='photography-button photography-button-next'
                 onClick={() => this.setState({selectedPhotoIndex: this.state.selectedPhotoIndex + 1})} 
                 style={{
-                  backgroundImage: next ? `url('/photography/${next.filename}')` : null
+                  backgroundImage: next ? `url('/photography/optimized/${next.filename}')` : null
                 }}
               >
                 Next
