@@ -5,6 +5,9 @@
   height: auto;
   display: block;
   margin: auto -15%;
+  &[src$='#small'] {
+    margin: auto;
+  }
 }
 
 .blogpost .embed-responsive {

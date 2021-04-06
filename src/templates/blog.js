@@ -56,8 +56,8 @@ export default class Blog extends Component {
                   </Alert>
                 ) }
                 { post.frontmatter.youtube && (
-                  <div class='embed-responsive embed-responsive-16by9'>
-                    <iframe title='Embedded video' className='embed-responsive-item' src={`https://www.youtube.com/embed/${post.frontmatter.youtube}?rel=0`} allowfullscreen></iframe>
+                  <div className='embed-responsive embed-responsive-16by9'>
+                    <iframe title='Embedded video' className='embed-responsive-item' src={`https://www.youtube.com/embed/${post.frontmatter.youtube}?rel=0`} allowFullScreen></iframe>
                   </div>
                 ) }
                 <div
