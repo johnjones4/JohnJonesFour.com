@@ -17,23 +17,21 @@ This is the third time I've taken my custom-designed, Raspberry Pi-based model r
 
 As can be seen in the chart above, the rocket accelerated _extremely_ quickly and reached it's apogee after about 7 seconds. To understand more about the flight, I updated my software to monitor the flight's velocity and acceleration and determine what "mode" the flight is in according to the following rules:
 
-* Velocity hits 5 m/s -> Launch, Powered Ascent
-* Velocity positive but Acceleration drops below 0 -> Unpowered Ascent
-* Velocity goes negative -> Free fall
-* Acceleration drops to ~0 -> Parachute deployed
-* Acceleration and Velocity drop to near zero -> Recovery
+* Velocity hits 5 m/s → Launch, Powered Ascent
+* Velocity positive but Acceleration drops below 0 → Unpowered Ascent
+* Velocity goes negative → Free fall
+* Acceleration drops to ~0 → Parachute deployed
+* Acceleration and Velocity drop to near zero → Recovery
 
 Based on these rules, here is the data for this flight:
 
 | Stage              | Length (seconds) |
 |--------------------|------------------|
 | Powered Ascent     | 1.439633s        |
-|--------------------|------------------|
 | Unpowered Ascent   | 6.747054s        |
-|--------------------|------------------|
 | Free fall Descent  | 1.723669s        |
-|--------------------|------------------|
 | Controlled Descent | 122.346487s      |
+ 
 
 I have confidence in these numbers because the powered ascent phase roughly matches the motor manufacturer's data for thrust duration and the sum of the unpowered ascent and free fall descent phases matches the delay time according to the motor manufacturer's data.
 
@@ -47,12 +45,21 @@ Note that the decent phase of the flight lasted ... a long time. I used too larg
 
 ### Inboard Module
 
-// Assembled photo
+I made several updates to the inboard module based on its performance on the first few flights. Overall, those improvements were:
 
-// Parts 3d print with link
+* Replaced the old GPS module, which rarely found a signal with [one from Adafruit](https://www.adafruit.com/product/746). It uses the same serial interface, so the software didn't need to change.
+* Switched to I2C for the altimeter, which yielded a faster sampling rate.
+* Added a momentary switch to the module. When pressed, it gracefully stops the software and restarts it. This allows one to "end" the capture session safely instead of just pulling the battery.
+* A new chassis for these components, detailed below. 
+
+![Assembled telemetry chassis](/images/rocket/assembled_oct9.jpg)
+
+![Fusion360 render of the telemetry chassis](/images/rocket/telemetrymodule_oct9.png)
 
 ### Software
 
-// Tracking Software
+In addition to the physical changes, I refactored the software somewhat to speed up the sampling rate after some further experimentation which different threading patterns. Overall I think I've optimized it as much as possible despite only getting to about 35 readings per second. (With the camera disabled, it can be much faster.)
 
-// Utility Tool
+For the ground software, the visualization platform is now entirely written in Go. Users can opt for a web dashboard or a terminal-based one. While the web version looks cooler, I find the terminal-based mode to be easier to read outside and faster for verifying if the tool is capturing. Again, this is only a backup if the inboard module fails to save data or gets destroyed.
+
+I've also written some new tooling to make it easier to ingest the captured data, derive some summary stats from it, and generate charts. (The altitude chart and summaries in this post came from this tool.) To read more about that, check out the [GitHub project](https://github.com/johnjones4/white-vest).
