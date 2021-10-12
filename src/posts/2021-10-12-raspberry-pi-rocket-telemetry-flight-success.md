@@ -5,7 +5,7 @@ description: ""
 youtube: MQ5-HOInSxI
 ---
 
-I recently joined [NOVAAR, Northern Virginia Association of Rocketry](https://novaar.org/drupal7/) so that I could have consistent access to a launch site and so I could learn from the club's members to grow my own skill. (And potentially pursue high-powered certification.) At the club's launch on October 9 on the Great Meadow in the Plains, VA, it was a perfect fall day, and I was able to fly my custom telemetry rocket with much success. I detail that below along with information about what I've updated with the [telemetry project I call _White Vest_](https://github.com/johnjones4/white-vest).
+I recently joined [NOVAAR, Northern Virginia Association of Rocketry](https://novaar.org/drupal7/) so that I could have consistent access to a launch site and so I could learn from the club's members to grow my own skill. (And potentially pursue high-powered certification.) At the club's launch on October 9 on the Great Meadow in the Plains, VA, I was able to fly my custom telemetry rocket with much success. I detail that below along with information about what I've updated with the [telemetry project I call _White Vest_](https://github.com/johnjones4/white-vest).
 
 This is the third time I've taken my custom-designed, Raspberry Pi-based model rocket telemetry system out and it's the rocket's sixth flight overall. After mixed, but encouraging results from the first two sessions and a fair amount of refactoring and design refinement, this flight was a huge success. Flying on an Aerotech F44-8W motor, the rocket had an apogee of just over 1200 feet which is a new record for it! At this point, I feel the design of the entire setup is just about as optimal as it can be, save for the occasional tweaks that will cross my mind.
 
@@ -39,22 +39,24 @@ I have confidence in these numbers because the powered ascent phase roughly matc
 
 ![Map from the flight](/images/rocket/oct921_map.jpg)
 
-Note that the decent phase of the flight lasted ... a long time. I used too large of a chute, but I did so because I was concerned about the descent phase overall with the more powerful motor. For the future I'll use a smaller chute because the rocket ended up landing 410 meters from the launch location. (I know this exactly because the GPS chip actually worked this time.)
+Note that the descent phase of the flight lasted ... a long time. I used too large of a chute, but I did so because I was concerned about the descent phase overall with the more powerful motor. For the future I'll use a smaller chute because the rocket ended up landing 410 meters from the launch location. (I know this exactly because the GPS chip actually worked this time.)
 
 ## Telemetry Tracking Updates
 
 ### Inboard Module
 
-I made several updates to the inboard module based on its performance on the first few flights. Overall, those improvements were:
+I made several updates to the inboard module for this flight based on its performance on the first few flights. Overall, those improvements were:
 
 * Replaced the old GPS module, which rarely found a signal with [one from Adafruit](https://www.adafruit.com/product/746). It uses the same serial interface, so the software didn't need to change.
 * Switched to I2C for the altimeter, which yielded a faster sampling rate.
 * Added a momentary switch to the module. When pressed, it gracefully stops the software and restarts it. This allows one to "end" the capture session safely instead of just pulling the battery.
-* A new chassis for these components, detailed below. 
+* A new chassis, shown below. 
 
 ![Assembled telemetry chassis](/images/rocket/assembled_oct9.jpg)
 
 ![Fusion360 render of the telemetry chassis](/images/rocket/telemetrymodule_oct9.png)
+
+This new chassis better braces the sensors in place, is stronger for hard landings, and it accomodates the new GPS chip and reset button.
 
 ### Software
 
