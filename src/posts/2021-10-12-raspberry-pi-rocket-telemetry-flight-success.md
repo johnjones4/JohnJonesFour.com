@@ -25,7 +25,7 @@ As can be seen in the chart above, the rocket accelerated _extremely_ quickly an
 
 Based on these rules, here is the data for this flight:
 
-| Stage              | Length (seconds) |
+| Phase              | Length (seconds) |
 |--------------------|------------------|
 | Powered Ascent     | 1.439633s        |
 | Unpowered Ascent   | 6.747054s        |
