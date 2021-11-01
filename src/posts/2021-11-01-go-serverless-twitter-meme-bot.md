@@ -60,7 +60,7 @@ func generateRandomSentence() string {
 
 ## Get An Image
 
-I sourced 17 images from the web of Ted Lasso and put them in an S3 bucket. This function picks a random one.
+I sourced 17 images of Ted Lasso from the Google Image Search and put them in an S3 bucket. This function picks a random one.
 
 ```go
 const (
@@ -83,7 +83,7 @@ func getRandomImage(client *s3.Client) (image.Image, error) {
 
 ## Build the Meme
 
-To assemble the actual meme, I used the library [fogleman/gg](https://github.com/fogleman/gg), which has some helpful graphics functions on top of Go's standard library. This function texts the random pep talk sentence and the randomly choses image, renders the text with a nice little drop shadow on the image, and returns the new image.
+To assemble the actual meme, I used the library [fogleman/gg](https://github.com/fogleman/gg), which has some helpful graphics functions on top of Go's standard library. This function takes the pep talk sentence and the chosen image, renders the text with a nice little drop shadow on the image, and returns the new image.
 
 ```go
 const (
@@ -108,7 +108,7 @@ func renderSentence(sentence string, image image.Image) (image.Image, error) {
 
 ## Transmit to Twitter
 
-With an assembled image, the bot uploads it in `uploadImage` and then tweets it in `tweetMeme`. This uses a generic OAuth1 library combined with standard HTTP requests rather an any sort of Twitter client.
+With an assembled image, the bot uploads it to Twitter in `uploadImage` and then tweets it in `tweetMeme`. This uses a generic OAuth1 library combined with standard HTTP requests rather an any sort of Twitter client.
 
 ```go
 var (
@@ -201,7 +201,7 @@ func tweetMeme(text string, mediaId string) error {
 
 ## The Lambda Handler
 
-Bringing it altogether, the functions all get called by our Lambda handler:
+Bringing it altogether, a Lambda handler calls all these functions:
 
 ```go
 func handler(ctx context.Context, event events.CloudWatchEvent) {
@@ -239,7 +239,7 @@ func main() {
 
 ## Deploying
 
-I deploy this app using the Serverless framework, which is a breathtakingly simple way to deploy to Lambda. The `serverless.yml` file for this is straightforward. It provisions a bucket and permissions and declares one Lambda that runs every hour.
+I deploy this app using the Serverless framework, which is a breathtakingly simple way to deploy to Lambda. The `serverless.yml` file for this is straightforward; it provisions a bucket, permissions, and one Lambda that runs every hour.
 
 ```yml
 service: peptalkbot
