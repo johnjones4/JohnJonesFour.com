@@ -28,7 +28,7 @@ const months = [
 export default class Blog extends Component {
 
   componentDidMount() {
-    // window.GithubRepoWidget.init()
+    window.GithubRepoWidget.init()
   }
 
   render () {
