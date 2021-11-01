@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How To Write a Go/Lambda based Twitter Meme Bot"
+title: "How To Write a Go/Lambda Based Twitter Meme Bot"
 description: "What's more fun than a pep talk by a Coach Ted Lasso bot?!"
 githubs:
   - johnjones4/pep-talk-generator
