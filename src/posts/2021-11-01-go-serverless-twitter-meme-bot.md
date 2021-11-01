@@ -5,6 +5,8 @@ description: "It's been a while since I wrote a fun bot, so on Sunday evening I 
 github: johnjones4/pep-talk-generator
 ---
 
+![Coach Lasso](/images/lasso.jpg)
+
 It's been a while since I wrote a fun bot, so on Sunday evening I cracked my knuckles, set up a new repo and wrote a bot I've been thinking about for a little while: a "pep talk" generator themed after Apple's hit show _Ted Lasso_ and a cool [_pep talk generator_ graphic posted on Reddit](https://www.reddit.com/r/coolguides/comments/qacund/handy_pep_talk_guide/). Here's how my bot works:
 
 ## Generate the Pep Talk
@@ -57,7 +59,7 @@ func generateRandomSentence() string {
 
 ## Get An Image
 
-I sourced 17 images from the web of Ted Lasso and put them in an S# bucket. This function picks a random one.
+I sourced 17 images from the web of Ted Lasso and put them in an S3 bucket. This function picks a random one.
 
 ```go
 const (
