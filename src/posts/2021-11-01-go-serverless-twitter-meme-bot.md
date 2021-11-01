@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "How To Write a Go/Lambda based Twitter Meme Bot"
-description: "It's been a while since I wrote a fun bot, so on Sunday evening I cracked my knuckles, set up a new repo and wrote a bot I've been thinking about for a little while: a \"pep talk\" generator themed after Apple's hit show Ted Lasso."
-github: johnjones4/pep-talk-generator
+description: "What's more fun than a pep talk by a Coach Ted Lasso bot?!"
+githubs:
+  - johnjones4/pep-talk-generator
 ---
 
 ![Coach Lasso](/images/lasso.jpg)
@@ -238,7 +239,7 @@ func main() {
 
 ## Deploying
 
-I deploy this app using the Serverless framework, which is a breathtakingly simple way to deploy to Lambda. The `serverless.yml` file for this is straightforward:
+I deploy this app using the Serverless framework, which is a breathtakingly simple way to deploy to Lambda. The `serverless.yml` file for this is straightforward. It provisions a bucket and permissions and declares one Lambda that runs every hour.
 
 ```yml
 service: peptalkbot
