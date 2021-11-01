@@ -293,3 +293,5 @@ resources:
       Properties:
         BucketName: ${self:custom.sourceImagesBucketName}
 ```
+
+To learn more about this, check out the repo: [johnjones4/pep-talk-generator](https://github.com/johnjones4/pep-talk-generator)
