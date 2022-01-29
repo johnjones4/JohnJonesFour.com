@@ -8,6 +8,7 @@ module.exports = async (workdir, outdir) => {
   const photosOutDir = path.join(outdir, 'photos')
   await fs.mkdir(photosOutDir, { recursive: true})
   const files = (await fs.readdir(photosDir)).filter(f => f.endsWith('.jpg'))
+
   const metadata = JSON.parse(await fs.readFile(path.join(photosDir, 'metadata.json')))
 
   for (const file of files) {
@@ -21,7 +22,9 @@ module.exports = async (workdir, outdir) => {
 
     await sharp(path.join(photosDir, file))
       .resize(1024)
-      .toFile(outputFilePath)
+      .toFile(outputFilePath, {
+        quality: 60
+      })
   }
 
   await fs.writeFile(path.join(photosOutDir, 'metadata.json'), JSON.stringify(metadata))
