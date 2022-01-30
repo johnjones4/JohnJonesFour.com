@@ -1,3 +1,4 @@
 _oldsite
 node_modules
 .DS_Store
+.cache

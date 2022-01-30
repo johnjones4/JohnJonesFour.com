@@ -1,0 +1,40 @@
+app: johnjonesfour-dot-com
+service: johnjonesfour-dot-com
+
+provider:
+  name: aws
+  runtime: go1.x
+  # environment:
+  #   DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+          - "sns:Publish"
+          Resource: "arn:aws:sns:*:*:contact"
+
+resources:
+  Resources:
+    MailQueue:
+      Type: AWS::SNS::Topic
+      Properties:
+        DisplayName: "Contact"
+        TopicName: contact
+        Subscription:
+          - Endpoint: ${self:custom.conf.mailTo}
+            Protocol: "email"
+
+functions:
+  contact:
+    handler: bin/contact
+    package:
+      include:
+        - ./bin/contact
+    events:
+      - http:
+          path: /api/contact
+          method: post
+
+custom:
+  conf: ${file(config.yml)}
