@@ -13,10 +13,12 @@ build-fns:
 deploy-fns: build-fns
 	cd fns && ./node_modules/serverless/bin/serverless.js deploy --verbose --force
 
-deploy-site:
+build-site:
 	cd site && npm run build
+
+deploy-site: build-site
 	cd site && aws s3 sync build/. s3://johnjonesfour.com
-	aws --profile johnjonesfour cloudfront create-invalidation --distribution-id EP9VBRV46T1UC --paths '/*'
+	aws cloudfront create-invalidation --distribution-id EP9VBRV46T1UC --paths '/*'
 
 provision-bot-role:
 	aws cloudformation update-stack --stack-name johnjonesfourdotcom-bot --template-body file://bot_role.yml  --capabilities  CAPABILITY_NAMED_IAM
