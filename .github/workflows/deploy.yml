@@ -1,0 +1,43 @@
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: deploy
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Setup Go environment
+        uses: actions/setup-go@v2.1.5
+        
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.5.1
+
+      - name: Install
+        run: make install
+
+      - name: Write Backend Config File
+        uses: DamianReeves/write-file-action@v1.0
+        with:
+          path: fns/config.yml
+          contents: |
+            mailTo: ${{ secrets.SNS_EMAIL }}
+            certArn: ${{ secrets.CERT_ARN }}
+            nonceKey: "${{ secrets.NONCE_KEY }}"
+            nonceIv: "${{ secrets.NONCE_IV }}"
+
+      - name: Deploy Backend
+        run: make deploy-fns
+
+      - name: Deploy Frontend
+        run: |
+          make content
+          make deploy-site

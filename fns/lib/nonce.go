@@ -7,7 +7,6 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"errors"
-	"log"
 	"os"
 	"strings"
 	"time"
@@ -82,6 +81,10 @@ func getNonceHeaders(request events.APIGatewayProxyRequest) (map[string]string, 
 }
 
 func verifyNonce(request events.APIGatewayProxyRequest, nonceEncr string) (bool, error) {
+	if nonceEncr == "" {
+		return false, nil
+	}
+
 	cipherTextDecoded, err := hex.DecodeString(nonceEncr)
 	if err != nil {
 		return false, err
@@ -96,14 +99,10 @@ func verifyNonce(request events.APIGatewayProxyRequest, nonceEncr string) (bool,
 	mode.CryptBlocks([]byte(cipherTextDecoded), []byte(cipherTextDecoded))
 
 	trimmed := strings.TrimSpace(string(cipherTextDecoded))
-	log.Println(trimmed)
 
 	var n nonce
 	err = json.Unmarshal([]byte(trimmed), &n)
 	if err != nil {
-		if e, ok := err.(*json.SyntaxError); ok {
-			log.Printf("syntax error at byte offset %d", e.Offset)
-		}
 		return false, err
 	}
 
@@ -124,8 +123,6 @@ func verifyNonce(request events.APIGatewayProxyRequest, nonceEncr string) (bool,
 			return false, nil
 		}
 	}
-
-	log.Println(time.Since(n.Timestamp) < time.Minute)
 
 	return time.Since(n.Timestamp) < time.Minute, nil
 }

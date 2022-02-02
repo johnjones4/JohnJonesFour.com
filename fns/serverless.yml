@@ -5,6 +5,7 @@ provider:
   name: aws
   runtime: go1.x
   stage: prod
+  profile: johnjonesfour
   iam:
     role:
       statements:
