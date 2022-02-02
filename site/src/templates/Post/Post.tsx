@@ -5,6 +5,7 @@ import {
   Alert,
   Container
 } from 'reactstrap'
+import Prism from 'prismjs'
 
 interface PostMetadata {
   title: string
@@ -27,20 +28,20 @@ const Post = () => {
     day,
     slug
   } = useParams()
-  const postSlug = `${year}-${month}-${day}-${slug}`
-  const fetchPost = async () => {
+  const fetchPost = async (postSlug: string) => {
     try {
       const post = await fetch(`/data/posts/${postSlug}.json`)
       setPost(await post.json())
+      setTimeout(() => Prism.highlightAll(), 1000)
     } catch(e) {
       console.error(e)
     }
   }
   useEffect(() => {
-    fetchPost()
-  }, [])
+    fetchPost(`${year}-${month}-${day}-${slug}`)
+  }, [year, month, day, slug])
   return (
-    <Page slug='post'>
+    <Page slug='post' title={post.title} description={post.description}>
       <div className='py-5 mb-5 text-center bg-light'>
         <h1 className='col-lg-6 mx-auto display-5'>{post.title}</h1>
         <h4>{new Date(Date.parse(post.date)).toLocaleDateString()}</h4>

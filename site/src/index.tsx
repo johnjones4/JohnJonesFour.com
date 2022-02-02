@@ -6,6 +6,7 @@ import App from './App'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './theme.css'
 import './index.css'
+import 'prismjs/themes/prism-coy.css'
 
 ReactDOM.render(
   <React.StrictMode>

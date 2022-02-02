@@ -63,7 +63,7 @@ const Photography = () => {
 
   
   return (
-    <Page slug='photography'>
+    <Page slug='photography' title='Photography'>
       <Container fluid className='container-photography'>
         <Row className='photography-gallery'>
           <Col sm={{ size: 12, order: 1 }} md={{ size: 10, order: 2 }} className='photography-col' >
@@ -73,7 +73,7 @@ const Photography = () => {
             { previous && (<button
               className='photography-button photography-button-previous'
               onClick={() => setSelection({
-                ... selection,
+                ...selection,
                 index: selection.index - 1
               })} 
               style={{
@@ -87,7 +87,7 @@ const Photography = () => {
             {next && (<button
               className='photography-button photography-button-next'
               onClick={() => setSelection({
-                ... selection,
+                ...selection,
                 index: selection.index + 1
               })} 
               style={{

@@ -1,10 +1,10 @@
 import React from 'react'
-import { Row, Col, Container, CardHeader, Card, CardTitle, CardBody, CardText } from 'reactstrap'
+import { Row, Col, Container, Card, CardTitle, CardBody, CardText } from 'reactstrap'
 import Page from '../../components/Page/Page'
 
 const Experience = () => {
   return (
-    <Page slug='experience'>
+    <Page slug='experience' title='Experience'>
       <Container className='container-content' tag='article'>
         <h1>Experience</h1>
         <Row>

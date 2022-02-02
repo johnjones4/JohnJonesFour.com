@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { useNavigate } from 'react-router-dom'
-import { Container, Nav, NavItem, NavLink, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
+import { Container, Nav, NavItem, NavLink, Row, Col, Modal, ModalHeader, ModalBody } from 'reactstrap'
+import { DefaultDescription, DefaultTitle } from '../../consts'
 import { socialLinks } from '../../util'
 import './home.css'
 
@@ -58,64 +60,73 @@ const Home = () => {
   ]
 
   return (
-    <div className='home'>
-      <Container fluid className='text-center bg-dark text-light'>
-        <h1 className='display-5 fw-bold'>
-          JohnJonesFour
-        </h1>
-        <div className='col-sm-9 mx-auto'>
-          <p className="lead mb-4">I'm a software engineer and innovator with a creative approach.</p>
-          <Row>
-            { highlights.map(h => {
-              return (
-                <Col key={h.name} md={12/highlights.length} className='home-tiles-tile' role='button' onClick={h.action}> 
-                  <img src={`/images/${h.name}.jpg`} className='img-fluid home-tiles-img' alt={h.label} />
-                  <h4>{h.label}</h4>
-                </Col>
-              )
-            }) }
-          </Row>
-          <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <Nav className='justify-content-center' light>
-              { navLinks.map(({path, label}) => {
+    <HelmetProvider>
+      <Helmet>
+        <title>{DefaultTitle}</title>
+        <meta
+          name="description"
+          content={DefaultDescription}
+        />
+      </Helmet>
+      <div className='home'>
+        <Container fluid className='text-center bg-dark text-light'>
+          <h1 className='display-5 fw-bold'>
+            JohnJonesFour
+          </h1>
+          <div className='col-sm-9 mx-auto'>
+            <p className="lead mb-4">I'm a software engineer and innovator with a creative approach.</p>
+            <Row>
+              { highlights.map(h => {
                 return (
-                  <NavItem key={path}>
-                    <NavLink href={path}>{label}</NavLink>
-                  </NavItem>
+                  <Col key={h.name} md={12/highlights.length} className='home-tiles-tile' role='button' onClick={h.action}> 
+                    <img src={`/images/${h.name}.jpg`} className='img-fluid home-tiles-img' alt={h.label} />
+                    <h4>{h.label}</h4>
+                  </Col>
                 )
               }) }
-            </Nav>
+            </Row>
+            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <Nav className='justify-content-center'>
+                { navLinks.map(({path, label}) => {
+                  return (
+                    <NavItem key={path}>
+                      <NavLink href={path}>{label}</NavLink>
+                    </NavItem>
+                  )
+                }) }
+              </Nav>
+            </div>
+            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <Nav className='justify-content-center social-links'>
+                { socialLinks.map(({link, label}) => {
+                  return (
+                    <NavItem key={link}>
+                      <NavLink href={link} target='_blank' rel='noopener'>
+                        <i className={`fab fa-${label}`}></i>
+                      </NavLink>
+                    </NavItem>
+                  )
+                }) }
+              </Nav>
+            </div>
           </div>
-          <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <Nav className='justify-content-center social-links'>
-              { socialLinks.map(({link, label}) => {
-                return (
-                  <NavItem key={link}>
-                    <NavLink href={link} target='_blank' rel='noopener'>
-                      <i className={`fab fa-${label}`}></i>
-                    </NavLink>
-                  </NavItem>
-                )
-              }) }
-            </Nav>
-          </div>
-        </div>
-      </Container>
-      <Modal
-        isOpen={!!videoModal.embed}
-        toggle={() => setVideoModal({} as Highlight)}
-        size='xl'
-      >
-        <ModalHeader toggle={() => setVideoModal({} as Highlight)}>
-          {videoModal.title}
-        </ModalHeader>
-        <ModalBody>
-          <div className='ratio ratio-16x9'>
-            <iframe title={videoModal.title} className='embed-responsive-item' src={videoModal.embed} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
-          </div>
-        </ModalBody>
-      </Modal>
-    </div>
+        </Container>
+        <Modal
+          isOpen={!!videoModal.embed}
+          toggle={() => setVideoModal({} as Highlight)}
+          size='xl'
+        >
+          <ModalHeader toggle={() => setVideoModal({} as Highlight)}>
+            {videoModal.title}
+          </ModalHeader>
+          <ModalBody>
+            <div className='ratio ratio-16x9'>
+              <iframe title={videoModal.title} className='embed-responsive-item' src={videoModal.embed} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
+            </div>
+          </ModalBody>
+        </Modal>
+      </div>
+    </HelmetProvider>
   )
 }
 
