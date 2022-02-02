@@ -11,7 +11,7 @@ build-fns:
 	cd fns/get_nonce && GOOS=linux go build -ldflags="-s -w" -o ../bin/get_nonce
 
 deploy-fns: build-fns
-	cd fns && sls deploy --verbose --force
+	cd fns && ./node_modules/serverless/bin/serverless.js deploy --verbose --force
 
 deploy-site:
 	cd site && npm run build
