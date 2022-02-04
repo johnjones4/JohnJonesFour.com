@@ -19,6 +19,7 @@ provider:
   environment:
     NONCE_KEY: ${self:custom.conf.nonceKey}
     NONCE_IV: ${self:custom.conf.nonceIv}
+    DOMAIN: ${self:custom.domainName}
 
 resources:
   Resources:
@@ -68,10 +69,15 @@ resources:
             Headers:
               - content-type
               - user-agent
+              - referer
+              - accept-language
           QueryStringsConfig:
             QueryStringBehavior: all
           CookiesConfig:
-            CookieBehavior: none
+            CookieBehavior: whitelist
+            Cookies:
+              - jj4uid
+              - jj4ses
     Distribution:
       Type: AWS::CloudFront::Distribution
       Properties:
@@ -160,6 +166,15 @@ functions:
       - http:
           path: /api/get-nonce
           method: get
+  ping:
+    handler: bin/ping
+    package:
+      include:
+        - ./bin/ping
+    events:
+      - http:
+          path: /api/ping
+          method: post
 
 custom:
   conf: ${file(config.yml)}

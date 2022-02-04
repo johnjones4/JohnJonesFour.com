@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardBody, CardSubtitle, CardText, CardTitle, Container, Nav, NavItem } from 'reactstrap'
 import Page from '../../components/Page/Page'
+import { Link } from 'react-router-dom'
 import './archive.css'
 
 interface FeedItem {
@@ -47,15 +48,13 @@ const Archive = () => {
             <Card key={item.path}>
               <CardBody>
                 <CardTitle tag="h3">
-                  <a href={item.path}>{item.title}</a>
+                  <Link to={'/' + item.path}>{item.title}</Link>
                 </CardTitle>
                 <CardSubtitle tag='h4'>
                 {new Date(Date.parse(item.date)).toLocaleDateString()}
                 </CardSubtitle>
-                <CardText>
-                  <p>{item.description}</p>
-                  <a href={item.path} className='btn btn-primary btn-sm'>Read More</a>
-                </CardText>
+                <p>{item.description}</p>
+                <Link to={'/' + item.path} className='btn btn-primary btn-sm'>Read More</Link>
               </CardBody>
             </Card>
           )

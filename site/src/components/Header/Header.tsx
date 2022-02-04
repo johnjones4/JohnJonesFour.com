@@ -6,8 +6,10 @@ import {
   Collapse,
   Nav,
   NavItem,
-  NavLink,
 } from 'reactstrap'
+import {
+  NavLink
+} from 'react-router-dom'
 import { navLinks } from '../../util'
 
 const Header = () => {
@@ -28,7 +30,7 @@ const Header = () => {
           { navLinks.map(({path, label}) => {
             return (
               <NavItem key={path}>
-                <NavLink href={path}>{label}</NavLink>
+                <NavLink className='nav-link' to={path}>{label}</NavLink>
               </NavItem>
             )
           }) }

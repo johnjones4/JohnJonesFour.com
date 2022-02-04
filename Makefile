@@ -9,6 +9,7 @@ build-fns:
 	rm -rf fns/bin || true
 	cd fns/contact && GOOS=linux go build -ldflags="-s -w" -o ../bin/contact
 	cd fns/get_nonce && GOOS=linux go build -ldflags="-s -w" -o ../bin/get_nonce
+	cd fns/ping && GOOS=linux go build -ldflags="-s -w" -o ../bin/ping
 
 deploy-fns: build-fns
 	cd fns && ./node_modules/serverless/bin/serverless.js deploy --verbose --force
@@ -28,4 +29,5 @@ install:
 	cd fns && npm install
 	cd fns/contact && go get .
 	cd fns/get_nonce && go get .
+	cd fns/ping && go get .
 	cd site && npm install

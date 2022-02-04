@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { useNavigate } from 'react-router-dom'
-import { Container, Nav, NavItem, NavLink, Row, Col, Modal, ModalHeader, ModalBody } from 'reactstrap'
-import { DefaultDescription, DefaultTitle } from '../../consts'
+import { Container, Nav, NavItem, Row, Col, Modal, ModalHeader, ModalBody } from 'reactstrap'
+import { NavLink } from 'react-router-dom'
+import OuterPage from '../../components/OuterPage/OuterPage'
 import { socialLinks } from '../../util'
 import './home.css'
 
@@ -60,14 +60,7 @@ const Home = () => {
   ]
 
   return (
-    <HelmetProvider>
-      <Helmet>
-        <title>{DefaultTitle}</title>
-        <meta
-          name="description"
-          content={DefaultDescription}
-        />
-      </Helmet>
+    <OuterPage>
       <div className='home'>
         <Container fluid className='text-center bg-dark text-light'>
           <h1 className='display-5 fw-bold'>
@@ -90,7 +83,7 @@ const Home = () => {
                 { navLinks.map(({path, label}) => {
                   return (
                     <NavItem key={path}>
-                      <NavLink href={path}>{label}</NavLink>
+                      <NavLink className='nav-link' to={path}>{label}</NavLink>
                     </NavItem>
                   )
                 }) }
@@ -101,9 +94,9 @@ const Home = () => {
                 { socialLinks.map(({link, label}) => {
                   return (
                     <NavItem key={link}>
-                      <NavLink href={link} target='_blank' rel='noopener'>
+                      <a className='nav-link' href={link} target='_blank' rel='noreferrer noopener'>
                         <i className={`fab fa-${label}`}></i>
-                      </NavLink>
+                      </a>
                     </NavItem>
                   )
                 }) }
@@ -126,7 +119,7 @@ const Home = () => {
           </ModalBody>
         </Modal>
       </div>
-    </HelmetProvider>
+    </OuterPage>
   )
 }
 

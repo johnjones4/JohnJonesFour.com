@@ -31,3 +31,17 @@ export const socialLinks = [
     label: 'github'
   }
 ]
+
+export const ping = async () => {
+  try {
+    await fetch('/api/ping', {
+      method: 'post',
+      body: JSON.stringify({
+        url: window.location.href,
+        referer: document.referrer
+      })
+    })
+  } catch (e) {
+    console.error(e)
+  }
+}
