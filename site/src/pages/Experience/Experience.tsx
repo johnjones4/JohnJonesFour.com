@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Container, Card, CardTitle, CardBody, CardText } from 'reactstrap'
+import { Row, Col, Container, Card, CardTitle, CardBody } from 'reactstrap'
 import Page from '../../components/Page/Page'
 
 const Experience = () => {

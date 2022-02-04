@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Card, CardBody, CardSubtitle, CardText, CardTitle, Container, Nav, NavItem } from 'reactstrap'
+import { Card, CardBody, CardSubtitle, CardTitle, Container, Nav, NavItem } from 'reactstrap'
 import Page from '../../components/Page/Page'
 import { Link } from 'react-router-dom'
 import './archive.css'
