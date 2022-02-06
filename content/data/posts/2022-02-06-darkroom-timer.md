@@ -143,5 +143,6 @@ I modeled the enclosure in Fusion360. The parts are:
 4. A knob for the potentiometer
 5. A dome-shaped cover for the button
 
+[Download the STLs on Thingiverse](https://www.thingiverse.com/thing:5235876)
 
 ![Enclosure print](/images/darkroom-timer/print.gif)
