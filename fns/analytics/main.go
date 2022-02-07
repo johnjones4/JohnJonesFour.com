@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/johnjones4/JohnJonesFour.com/fns/lib"
@@ -8,7 +9,8 @@ import (
 
 func main() {
 	now := time.Now()
-	_, err := lib.RunAnalytics(now.Add(time.Hour*24*7-1), now)
+	report, err := lib.RunAndFormatAnalytics(now.Add(time.Hour*24*7*-1), now)
+	fmt.Println(report)
 	if err != nil {
 		panic(err)
 	}

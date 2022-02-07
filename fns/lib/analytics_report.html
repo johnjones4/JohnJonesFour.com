@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body>
+    <h1>Website Analytics From {{ .StartDate }} to {{ .EndDate}}</h1>
+    <section>
+      <h2>Key Metrics</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range .KeyMetrics }}
+            <tr>
+              <td>
+                {{ .Key }}
+              </td>
+              <td>
+                {{ .Value }}
+              </td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </section>
+    {{ range .Tables }}
+      <section>
+        <h2>{{ .Title }}</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range .Values }}
+              <tr>
+                <td>
+                  {{ .Name }}
+                </td>
+                <td>
+                  {{ .Value }}
+                </td>
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </section>
+    {{ end }}
+  </body>
+</html>
