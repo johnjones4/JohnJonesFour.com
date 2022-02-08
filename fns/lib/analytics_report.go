@@ -2,6 +2,7 @@ package lib
 
 import (
 	"bytes"
+	"embed"
 	"fmt"
 	"html/template"
 	"time"
@@ -24,8 +25,11 @@ type analyticsReportTemplateVar struct {
 	Tables     []table
 }
 
+//go:embed analytics_report.html
+var static embed.FS
+
 func formatReport(a analyticsOutput) (string, error) {
-	t, err := template.ParseFiles("../lib/analytics_report.html")
+	t, err := template.ParseFS(static, "analytics_report.html")
 	if err != nil {
 		return "", err
 	}

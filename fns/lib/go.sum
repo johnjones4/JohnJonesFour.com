@@ -19,6 +19,8 @@ github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.13.0 h1:NfqONXoDwWtBCnkPV
 github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs v1.13.0/go.mod h1:OFC7Rn7jyPoKtczT+TARRbxKHRmN9nyrJ2rmCc3ewuQ=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.7.0 h1:4QAOB3KrvI1ApJK14sliGr3Ie2pjyvNypn/lfzDHfUw=
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.7.0/go.mod h1:K/qPe6AP2TGYv4l6n7c88zh9jWBDf6nHhvg1fx/EWfU=
+github.com/aws/aws-sdk-go-v2/service/ses v1.12.0 h1:AsIuaTDMsg0bX5cfGNfU8uxUA1tAhBrojswetpD6PcY=
+github.com/aws/aws-sdk-go-v2/service/ses v1.12.0/go.mod h1:061vZ/X66UM49xth/ZZGvtJdHGgLh8FwgRvt+1YyhJI=
 github.com/aws/aws-sdk-go-v2/service/sns v1.15.0 h1:L2C+CaTVpa2kO0aijS7pVQFTGzGTmTDPcGQFp7NB/Gs=
 github.com/aws/aws-sdk-go-v2/service/sns v1.15.0/go.mod h1:0cGC7JOcSXhQ1RXsq1InsRQV1WYS9kF5Gr7yZk3Nwxg=
 github.com/aws/aws-sdk-go-v2/service/sso v1.9.0 h1:1qLJeQGBmNQW3mBNzK2CFmrQNmoXWrscPqsrAaU1aTA=
@@ -37,6 +39,7 @@ github.com/google/go-cmp v0.5.6 h1:BKbKCqvP6I+rmFHt06ZmyQtvB8xAkWdhFyr0ZUNZcxQ=
 github.com/google/go-cmp v0.5.6/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
 github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/jmespath/go-jmespath v0.4.0 h1:BEgLn5cpjn8UN1mAw4NjwDrS35OdebyEtFe+9YPoQUg=
 github.com/jmespath/go-jmespath v0.4.0/go.mod h1:T8mJZnbsbmF+m6zOOFylbeCJqk5+pHWvzYPziyZiYoo=
 github.com/jmespath/go-jmespath/internal/testify v1.5.1/go.mod h1:L3OGu8Wl2/fWfCI6z80xFu9LTZmf1ZRjMHUOPmWr69U=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=

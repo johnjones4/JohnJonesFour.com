@@ -1,9 +1,9 @@
-//https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs#FilterLogEventsInput
 package lib
 
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"os"
 	"sort"
 	"strings"
@@ -12,6 +12,8 @@ import (
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs"
+	"github.com/aws/aws-sdk-go-v2/service/ses"
+	"github.com/aws/aws-sdk-go-v2/service/ses/types"
 )
 
 type rankedItem struct {
@@ -81,6 +83,43 @@ func RunAndFormatAnalytics(start, end time.Time) (string, error) {
 		return "", e
 	}
 	return formatReport(a)
+}
+
+func RunFormatAndEmailAnalytics(start, end time.Time) error {
+	message, err := RunAndFormatAnalytics(start, end)
+	if err != nil {
+		return err
+	}
+
+	cfg, err := config.LoadDefaultConfig(context.TODO())
+	if err != nil {
+		return err
+	}
+
+	client := ses.NewFromConfig(cfg)
+
+	_, err = client.SendEmail(context.TODO(), &ses.SendEmailInput{
+		Destination: &types.Destination{
+			ToAddresses: []string{
+				os.Getenv("EMAIL"),
+			},
+		},
+		Message: &types.Message{
+			Subject: &types.Content{
+				Charset: aws.String("UTF-8"),
+				Data:    aws.String(fmt.Sprintf("Site Analytics %s - %s", start.String(), end.String())),
+			},
+			Body: &types.Body{
+				Html: &types.Content{
+					Charset: aws.String("UTF-8"),
+					Data:    aws.String(message),
+				},
+			},
+		},
+		Source: aws.String(os.Getenv("EMAIL")),
+	})
+
+	return err
 }
 
 func RunAnalytics(start, end time.Time) (analyticsOutput, error) {

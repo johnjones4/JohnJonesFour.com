@@ -1,17 +1,22 @@
 package main
 
 import (
-	"fmt"
 	"time"
 
+	"github.com/aws/aws-lambda-go/events"
+	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/johnjones4/JohnJonesFour.com/fns/lib"
 )
 
-func main() {
+func HandleRequest(events.CloudWatchEvent) (string, error) {
 	now := time.Now()
-	report, err := lib.RunAndFormatAnalytics(now.Add(time.Hour*24*7*-1), now)
-	fmt.Println(report)
+	err := lib.RunFormatAndEmailAnalytics(now.Add(time.Hour*24*30*-1), now)
 	if err != nil {
 		panic(err)
 	}
+	return "", nil
+}
+
+func main() {
+	lambda.Start(HandleRequest)
 }
