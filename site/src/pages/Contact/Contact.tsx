@@ -63,7 +63,7 @@ const Contact = () => {
   }, [])
 
   return (
-    <Page slug='contact' title='Contact'>
+    <Page slug='contact' title='Contact' canonical='/contact'>
       <Container className='container-content'>
         <h1>Contact</h1>
         { alert && (

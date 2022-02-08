@@ -3,6 +3,7 @@ layout: post
 title: "Raspberry Pi Model Rocket Telemetry Flight 3: 1200 Feet! (With Project Updates)"
 description: ""
 youtube: MQ5-HOInSxI
+preview: /images/rocket/assembled_oct9.jpg
 ---
 
 I recently joined [NOVAAR, Northern Virginia Association of Rocketry](https://novaar.org/drupal7/) so that I could have consistent access to a launch site and so I could learn from the club's members to grow my own skill. (And potentially pursue high-powered certification.) At the club's launch on October 9 on the Great Meadow in the Plains, VA, I was able to fly my custom telemetry rocket with much success. I detail that below along with information about what I've updated with the [telemetry project I call _White Vest_](https://github.com/johnjones4/white-vest).

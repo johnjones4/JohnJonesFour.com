@@ -4,7 +4,7 @@ import Page from '../../components/Page/Page'
 
 const Experience = () => {
   return (
-    <Page slug='experience' title='Experience'>
+    <Page slug='experience' title='Experience' canonical='/experience'>
       <Container className='container-content' tag='article'>
         <h1>Experience</h1>
         <Row>

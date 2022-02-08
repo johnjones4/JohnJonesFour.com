@@ -3,6 +3,7 @@ layout: post
 title: "I Built a Bluetooth Low Energy, ESP32-Based Darkroom and Film Development Timer"
 description: "In film, timing is everything. This tool is a rugged and darkroom-safe solution to precise timing needs."
 youtube: oanDhpj7Gts
+preview: /images/darkroom-timer/prototype.jpg
 ---
 
 Developing is just subjecting exposed film or paper to a series of chemical

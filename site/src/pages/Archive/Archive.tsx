@@ -40,7 +40,7 @@ const Archive = () => {
   }
   const pages = Math.ceil(feed.length / perPage)
   return (
-    <Page slug='archive' title='Posts'>
+    <Page slug='archive' title='Posts' canonical='/posts'>
       <Container className='container-content'>
         <h1>Posts</h1>
         { getPage().map(item => {

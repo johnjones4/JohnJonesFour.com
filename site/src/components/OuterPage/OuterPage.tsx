@@ -7,6 +7,7 @@ interface OuterPageProps {
   children: any
   title?: string
   description?: string
+  canonical?: string
 }
 
 const OuterPage = (props: OuterPageProps) => {
@@ -18,8 +19,12 @@ const OuterPage = (props: OuterPageProps) => {
       <Helmet>
         <title>{props.title ? `${props.title} | ` : ''}{DefaultTitle}</title>
         <meta
-          name="description"
+          name='description'
           content={props.description ? props.description : DefaultDescription}
+        />
+        <link 
+          rel='canonical' 
+          href={props.canonical ? `https://johnjonesfour.com${props.canonical}` : window.location.href}
         />
       </Helmet>
       {props.children}

@@ -63,7 +63,7 @@ const Photography = () => {
 
   
   return (
-    <Page slug='photography' title='Photography'>
+    <Page slug='photography' title='Photography' canonical='/photography'>
       <Container fluid className='container-photography'>
         <Row className='photography-gallery'>
           <Col sm={{ size: 12, order: 1 }} md={{ size: 10, order: 2 }} className='photography-col' >

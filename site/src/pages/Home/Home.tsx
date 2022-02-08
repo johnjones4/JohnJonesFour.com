@@ -60,7 +60,7 @@ const Home = () => {
   ]
 
   return (
-    <OuterPage>
+    <OuterPage canonical='/'>
       <div className='home'>
         <Container fluid className='text-center bg-dark text-light'>
           <h1 className='display-5 fw-bold'>
