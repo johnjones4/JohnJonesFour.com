@@ -28,6 +28,7 @@ provision-bot-role:
 install:
 	cd content && npm install
 	cd fns && npm install
+	cd fns/lib && go get .
 	cd fns/contact && go get .
 	cd fns/get_nonce && go get .
 	cd fns/ping && go get .

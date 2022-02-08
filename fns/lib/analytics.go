@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 	"sort"
 	"strings"
@@ -48,11 +49,11 @@ func getEvents(start, end time.Time) ([]pingEvent, error) {
 	client := cloudwatchlogs.NewFromConfig(cfg)
 
 	var nextPage *string = nil
-	var firstRun = true
+	page := 0
 	collector := make([]pingEvent, 0)
 
-	for nextPage != nil || firstRun {
-		firstRun = false
+	for nextPage != nil || page == 0 {
+		log.Printf("Fetching page %d\n", page)
 		results, err := client.FilterLogEvents(context.TODO(), &cloudwatchlogs.FilterLogEventsInput{
 			LogGroupName:  aws.String("/aws/lambda/johnjonesfour-dot-com-prod-ping"),
 			EndTime:       aws.Int64(end.UnixNano() / int64(time.Millisecond)),
@@ -73,6 +74,7 @@ func getEvents(start, end time.Time) ([]pingEvent, error) {
 			collector = append(collector, pe)
 		}
 		nextPage = results.NextToken
+		page++
 	}
 	return collector, nil
 }
