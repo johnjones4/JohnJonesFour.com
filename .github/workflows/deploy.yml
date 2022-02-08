@@ -38,6 +38,7 @@ jobs:
             certArn: ${{ secrets.CERT_ARN }}
             nonceKey: "${{ secrets.NONCE_KEY }}"
             nonceIv: "${{ secrets.NONCE_IV }}"
+            myIp: "${{ secrets.MY_IP }}"
 
       - name: Deploy Backend
         run: make deploy-fns
