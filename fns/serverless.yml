@@ -16,10 +16,20 @@ provider:
           Action:
           - "sns:ListTopics"
           Resource: "*"
+        - Effect: Allow
+          Action:
+          - "ses:SendEmail"
+          Resource: "*"
+        - Effect: Allow
+          Action:
+          - "logs:FilterLogEvents"
+          Resource: "*"
   environment:
     NONCE_KEY: ${self:custom.conf.nonceKey}
     NONCE_IV: ${self:custom.conf.nonceIv}
     DOMAIN: ${self:custom.domainName}
+    EMAIL: ${self:custom.conf.mailTo}
+    MY_IP: ${self:custom.conf.myIp}
 
 resources:
   Resources:
@@ -175,6 +185,14 @@ functions:
       - http:
           path: /api/ping
           method: post
+  analytics:
+    handler: bin/analytics
+    package:
+      include:
+        - ./bin/analytics
+    events:
+      - schedule: rate(30 days)
+    timeout: 60
 
 custom:
   conf: ${file(config.yml)}
