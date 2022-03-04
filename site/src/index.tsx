@@ -8,12 +8,19 @@ import './theme.css'
 import './index.css'
 import 'prismjs/themes/prism-coy.css'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const rootElement = document.getElementById("root");
+
+if (rootElement && rootElement.hasChildNodes()) {
+  ReactDOM.hydrate(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>, rootElement);
+} else {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>, rootElement);
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
