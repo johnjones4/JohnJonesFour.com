@@ -69,13 +69,17 @@ const Post = () => {
         </div>
         <Container tag='article' fluid='sm' className='container-content'>
           { post.note && (
-            <Alert color='dark'>
-              <span dangerouslySetInnerHTML={{ __html: post.note }} />    
-            </Alert>
+            <div>
+              <Alert color='dark'>
+                <span dangerouslySetInnerHTML={{ __html: post.note }} />    
+              </Alert>
+            </div>
           ) }
           { post.youtube && (
-            <div className='ratio ratio-16x9'>
-              <iframe title='Embedded video' className='embed-responsive-item' src={`https://www.youtube.com/embed/${post.youtube}?rel=0`} allowFullScreen></iframe>
+            <div>
+              <div className='ratio ratio-16x9'>
+                <iframe title='Embedded video' className='embed-responsive-item' src={`https://www.youtube.com/embed/${post.youtube}?rel=0`} allowFullScreen></iframe>
+              </div>
             </div>
           ) }
           <div dangerouslySetInnerHTML={{__html: post.content}} />

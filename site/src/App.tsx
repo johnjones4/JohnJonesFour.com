@@ -7,18 +7,45 @@ import Photography from './pages/Photography/Photography'
 import Contact from './pages/Contact/Contact'
 import Post from './templates/Post/Post'
 
+const routes = [
+  {
+    path: '/posts',
+    element: (<Archive />)
+  },
+  {
+    path: '/archive',
+    element: (<Archive />)
+  },
+  {
+    path: '/photography',
+    element: (<Photography />)
+  },
+  {
+    path: '/contact',
+    element: (<Contact />)
+  },
+  {
+    path: '/experience',
+    element: (<Experience />)
+  },
+  {
+    path: '/work',
+    element: (<Experience />)
+  },
+  {
+    path: '/:year/:month/:day/:slug',
+    element: (<Post />)
+  }
+]
+
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/posts" element={<Archive />} />
-        <Route path="/archive" element={<Archive />} />
-        <Route path="/photography" element={<Photography />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/work" element={<Experience />} />
-        <Route path="/:year/:month/:day/:slug" element={<Post />} />
+        <Route index element={<Home />} /> 
+        <Route path='/index.html' element={<Home />} /> 
+        {routes.map(({path, element}) => <Route path={path} element={element} />)}
+        {routes.map(({path, element}) => <Route path={`${path}/index.html`} element={element} />)}
       </Routes>
     </BrowserRouter>
   )

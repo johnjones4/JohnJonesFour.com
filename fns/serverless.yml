@@ -45,30 +45,9 @@ resources:
       Type: AWS::S3::Bucket
       Properties: 
         BucketName: ${self:custom.domainName}
-    SiteS3BucketPolicy:
-      Type: "AWS::S3::BucketPolicy"
-      Properties: 
-        Bucket: !Ref SiteS3Bucket
-        PolicyDocument:
-          Version: '2012-10-17'
-          Statement: 
-          - 
-            Action: 
-              - "s3:GetObject"
-            Effect: "Allow"
-            Principal:
-              AWS: !Sub 'arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${CloudFrontOriginIdentity}'
-            Resource: 
-              Fn::Join: 
-                - ""
-                - 
-                  - !GetAtt SiteS3Bucket.Arn
-                  - "/*"
-    CloudFrontOriginIdentity:
-      Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
-      Properties:
-        CloudFrontOriginAccessIdentityConfig:
-          Comment: 'origin identity'
+        WebsiteConfiguration:
+          IndexDocument: index.html
+          ErrorDocument: index.html
     BackendPolicy:
       Type: AWS::CloudFront::OriginRequestPolicy
       Properties:
@@ -97,15 +76,15 @@ resources:
           Origins:
             - DomainName: 
                 Fn::Join:
-                  - "."
+                  - ""
                   - 
                     - ${self:custom.domainName}
-                    - s3
+                    - .s3-website-
                     - !Ref AWS::Region
-                    - !Ref AWS::URLSuffix
-              Id: s3ProductionBucket
-              S3OriginConfig:
-                OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOriginIdentity}'
+                    - .amazonaws.com
+              Id: s3ProductionBucketDirect
+              CustomOriginConfig:
+                OriginProtocolPolicy: http-only
             - DomainName: 
                 Fn::Join:
                   - "."
@@ -133,7 +112,7 @@ resources:
               - GET
               - HEAD
             Compress: true
-            TargetOriginId: s3ProductionBucket
+            TargetOriginId: s3ProductionBucketDirect
             ForwardedValues:
               QueryString: 'false'
               Cookies:

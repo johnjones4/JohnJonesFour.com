@@ -19,7 +19,7 @@ build-site:
 	cd site && npm run build
 
 deploy-site: build-site
-	cd site && aws s3 sync build/. s3://johnjonesfour.com
+	cd site && aws s3 sync build/. s3://johnjonesfour.com --acl public-read
 	aws cloudfront create-invalidation --distribution-id EP9VBRV46T1UC --paths '/*'
 
 provision-bot-role:
