@@ -10,5 +10,5 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/ses v1.12.0
 	github.com/aws/aws-sdk-go-v2/service/sns v1.15.0
 	github.com/google/uuid v1.3.0
-	golang.org/x/net v0.0.0-20220127200216-cd36cc0744dd
+	golang.org/x/net v0.7.0
 )
