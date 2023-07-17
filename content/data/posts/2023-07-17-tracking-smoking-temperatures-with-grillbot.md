@@ -2,7 +2,7 @@
 layout: post
 title: "Tracking Smoking Temperatures with Grillbot"
 description: "What’s the best way to overcomplicate grilling? Make a meat thermometer that logs temperatures to your computer."
-youtube: dfsdfsdf
+youtube: 9kDx2IjlLYs
 preview: /images/grillbotposter.jpg
 githubs:
   - johnjones4/grillbot
