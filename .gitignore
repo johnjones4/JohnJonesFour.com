@@ -1,4 +1,7 @@
-_oldsite
-node_modules
+_site/
+node_modules/
+package-lock.json
+bin
+.serverless
+config.yml
 .DS_Store
-.cache

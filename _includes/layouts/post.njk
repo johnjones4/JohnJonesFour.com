@@ -1,0 +1,66 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="post col-lg-7">
+	{# Only include the syntax highlighter CSS on blog posts #}
+	{%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
+	{%- css %}{% include "public/css/prism-diff.css" %}{%- endcss %}
+	{%- css %}{% include "public/css/post.css" %}{%- endcss %}
+
+	<header class="mb-3">
+		<h1>{{ title }}</h1>
+		<p>
+			<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+		</p>
+	</header>
+		
+	{%- if youtube %}
+		<div class="ratio ratio-16x9 mb-3">
+			<iframe src="https://www.youtube.com/embed/{{youtube}}?rel=0" title="YouTube video" allowfullscreen></iframe>
+		</div>
+	{%- elseif embed %}
+		{{ embed | safe }}
+	{%- elseif preview %}
+		<img src="{{preview}}" alt="Preview image" class="img-fluid mb-3" />
+	{%- endif %}
+	<div class="row justify-content-center">
+		<div class="col-md-9">
+			<div class="content">
+				{{ content | safe }}
+			</div>
+		</div>
+		{%- if githubs or github or links %}
+			<aside class="col-md-3">
+				<h3>Relevant Content</h3>
+				{%- if githubs %}
+					<h4>GitHub</h4>
+					<ul>
+						{% for github in githubs %}
+							<li>
+								<a href="https://github.com/{{github}}" target="_blank">{{github}}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{%- elseif github %}
+					<h4>GitHub</h4>
+					<ul>
+						<li>
+							<a href="https://github.com/{{github}}" target="_blank">{{github}}</a>
+						</li>
+					</ul>
+				{%- endif %}
+				{%- if links %}
+					<h4>Links</h4>
+					<ul>
+						{%- for link in links %}
+							<li>
+								<a href="{{ link.src }}" target="_blank">{{ link.name }}</a>
+							</li>
+						{%- endfor %}
+					</ul>
+				{%- endif %}
+			</aside>
+		{%- endif %}
+	</div>
+</article>

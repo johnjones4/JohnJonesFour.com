@@ -1,0 +1,37 @@
+:root {
+  --parchment: #F0E7CD;
+  --blue: #547AA5;
+  --brown: #2E1E0F;
+  --lightbrown: #BC6C25;
+  --gray: #C1BFB5;
+}
+
+@font-face {
+  font-family: 'Literata';
+  src: url('/fonts/Literata.ttf');
+}
+
+body {
+  font-family: Literata, Georgia, serif;
+  background-color: var(--parchment);
+}
+
+a {
+  color: var(--blue);
+}
+
+time {
+  color: var(--brown);
+}
+
+h2 a {
+  text-decoration: none;
+}
+
+h2 a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+}

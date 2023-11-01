@@ -1,0 +1,30 @@
+{%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
+<section class="postlist">
+{% for post in postslist | reverse %}
+	<article class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} mb-5">
+		<header>
+			<h2>
+				<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+			</h2>
+			<p>
+				<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
+			</p>
+		</header>
+		{%- if page.url == '/' %}
+			{%- if post.data.youtube %}
+				<div class="ratio ratio-16x9 mb-3">
+					<iframe src="https://www.youtube.com/embed/{{post.data.youtube}}?rel=0" title="YouTube video" allowfullscreen></iframe>
+				</div>
+			{%- elseif post.data.embed %}
+				{{ post.data.embed | safe }}
+			{%- elseif post.data.preview %}
+				<img src="{{post.data.preview}}" alt="Preview image" class="img-fluid" />
+			{%- endif %}
+		{%- endif %}
+		<p>{{ post.data.description }}</p>
+		<p>
+			<a href="{{ post.url }}" class="postlist-link">Read More</a>
+		</p>
+	</article>
+{% endfor %}
+</section>

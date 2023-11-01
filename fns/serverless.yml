@@ -1,9 +1,9 @@
-app: johnjonesfour-dot-com
-service: johnjonesfour-dot-com
+app: johnjonesfour-dot-com-2023
+service: johnjonesfour-dot-com-2023
 
 provider:
   name: aws
-  runtime: go1.x
+  runtime: provided.al2
   stage: prod
   iam:
     role:
@@ -45,9 +45,35 @@ resources:
       Type: AWS::S3::Bucket
       Properties: 
         BucketName: ${self:custom.domainName}
-        WebsiteConfiguration:
-          IndexDocument: index.html
-          ErrorDocument: index.html
+    S3BucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket: !Ref SiteS3Bucket
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Sid: AllowCloudFrontServicePrincipalReadOnly
+            Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: s3:GetObject
+            Resource: 
+              Fn::Join:
+                - ""
+                - 
+                  - 'arn:aws:s3:::'
+                  - !Ref SiteS3Bucket
+                  - '/*'
+            Condition:
+              StringEquals:
+                AWS:SourceArn:
+                  Fn::Join:
+                    - ""
+                    - 
+                      - 'arn:aws:cloudfront::'
+                      - !Ref AWS::AccountId
+                      - ':distribution/'
+                      - !Ref Distribution
     BackendPolicy:
       Type: AWS::CloudFront::OriginRequestPolicy
       Properties:
@@ -67,6 +93,34 @@ resources:
             Cookies:
               - jj4uid
               - jj4ses
+    OriginAccessControl:
+      Type: AWS::CloudFront::OriginAccessControl
+      Properties:
+        OriginAccessControlConfig: 
+          Name: JohnJonesFour.com
+          OriginAccessControlOriginType: s3
+          SigningBehavior: always
+          SigningProtocol: sigv4
+    CFFunction:
+      Type: AWS::CloudFront::Function
+      Properties:
+        AutoPublish: true
+        FunctionCode: !Sub |
+          function handler(event) {
+            var request = event.request;
+            var uri = request.uri;
+            if (uri.endsWith('/')) {
+                request.uri += 'index.html';
+            }
+            else if (!uri.includes('.')) {
+                request.uri += '/index.html';
+            }
+            return request;
+          }
+        FunctionConfig: 
+          Runtime: cloudfront-js-1.0
+          Comment: Adds index to all requests
+        Name: index_adder
     Distribution:
       Type: AWS::CloudFront::Distribution
       Properties:
@@ -74,22 +128,23 @@ resources:
           Aliases:
             - ${self:custom.domainName}
           Origins:
-            - DomainName: 
+            - DomainName:
                 Fn::Join:
                   - ""
                   - 
-                    - ${self:custom.domainName}
-                    - .s3-website-
+                    - !Ref SiteS3Bucket
+                    - .s3.
                     - !Ref AWS::Region
                     - .amazonaws.com
               Id: s3ProductionBucketDirect
-              CustomOriginConfig:
-                OriginProtocolPolicy: http-only
+              OriginAccessControlId: !Ref OriginAccessControl 
+              S3OriginConfig:
+                OriginAccessIdentity:
             - DomainName: 
                 Fn::Join:
                   - "."
                   - 
-                    - !Ref ApiGatewayRestApi
+                    - !Ref HttpApi
                     - execute-api
                     - !Ref AWS::Region
                     - !Ref AWS::URLSuffix
@@ -101,9 +156,6 @@ resources:
           Comment: Distribution
           DefaultRootObject: index.html
           CustomErrorResponses:
-          - ErrorCode: 404
-            ResponseCode: 200
-            ResponsePagePath: /index.html
           - ErrorCode: 403
             ResponseCode: 200
             ResponsePagePath: /index.html
@@ -118,6 +170,9 @@ resources:
               Cookies:
                 Forward: none
             ViewerProtocolPolicy: redirect-to-https
+            FunctionAssociations:
+              - EventType: viewer-request
+                FunctionARN: !Ref CFFunction
           CacheBehaviors:
             - AllowedMethods: 
                 - HEAD
@@ -128,7 +183,7 @@ resources:
                 - PUT
                 - PATCH
               CachePolicyId: 4135ea2d-6df8-44a3-9df3-4b5a84be39ad
-              OriginRequestPolicyId: !Sub '${BackendPolicy}'
+              OriginRequestPolicyId: !Ref BackendPolicy
               ViewerProtocolPolicy: redirect-to-https
               TargetOriginId: apigateway
               PathPattern: api/*
@@ -137,41 +192,15 @@ resources:
             SslSupportMethod: sni-only
 
 functions:
-  contact:
-    handler: bin/contact
+  all:
+    handler: bin/fns
     package:
       include:
-        - ./bin/contact
+        - ./bin/fns
     events:
-      - http:
-          path: /api/contact
-          method: post
-  get_nonce:
-    handler: bin/get_nonce
-    package:
-      include:
-        - ./bin/get_nonce
-    events:
-      - http:
-          path: /api/get-nonce
-          method: get
-  ping:
-    handler: bin/ping
-    package:
-      include:
-        - ./bin/ping
-    events:
-      - http:
-          path: /api/ping
-          method: post
-  analytics:
-    handler: bin/analytics
-    package:
-      include:
-        - ./bin/analytics
-    events:
-      - schedule: rate(30 days)
-    timeout: 60
+      - httpApi:
+          path: '*'
+          method: '*'
 
 custom:
   conf: ${file(config.yml)}

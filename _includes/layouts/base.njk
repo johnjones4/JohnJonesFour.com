@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ title or metadata.title }}</title>
+		<meta name="description" content="{{ description or metadata.description }}">
+
+		<link rel="apple-touch-icon" href="{{url}}logo192.png" />
+		<link rel="manifest" href="{{url}}manifest.json" />
+		<link rel="icon" href="{{url}}favicon.ico" />
+
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+
+		{%- css %}{% include "node_modules/bootstrap/dist/css/bootstrap.min.css" %}{% endcss %}
+		{%- css %}{% include "public/css/index.css" %}{% endcss %}
+
+		<style>{% getBundle "css" %}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+
+			<nav class="navbar navbar-expand-lg">
+				<div class="container-fluid">
+					<a href="/" class="navbar-brand">{{ metadata.title }}</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ms-auto">
+							{%- for entry in collections.all | eleventyNavigation %}
+								<li class="nav-item">
+									<a class="nav-link active" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+								</li>
+							{%- endfor %}
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main id="skip" class="container-fluid">
+			<div class="row justify-content-center mb-5">
+				{{ content | safe }}
+			</div>
+		</main>
+
+		<footer class="container-fluid mb-5">
+			<p>
+				Copyright &copy; John E. Jones IV
+			</p>
+			<p>
+				<a title="Privacy-friendly Web Analytics" href="https://clicky.com/101432210">
+					<img alt="Clicky" src="https://static.getclicky.com/media/links/badge.gif"/>
+				</a>
+				<script async data-id="101432210" src="https://static.getclicky.com/js"></script>
+			</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+article.post .content img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+article.post aside {
+  border-left: dotted 1px var(--gray);
+}
+
+article.post header {
+  border-bottom: dotted 1px var(--gray);
+}
