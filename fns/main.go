@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"context"
+	"encoding/base64"
 	"net/http"
 	"net/url"
 
@@ -23,7 +24,7 @@ func initMux() {
 	router.Use(middleware.RequestLogger(&middleware.DefaultLogFormatter{Logger: log}))
 	router.Use(middleware.Recoverer)
 
-	router.Post("/api/contact", contactHandler)
+	router.Post("/prod/action/contact", contactHandler)
 }
 
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
@@ -31,17 +32,28 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 		initMux()
 	}
 
-	bodyBytes := []byte(request.Body)
+	var body []byte
+	if request.IsBase64Encoded {
+		var err error
+		body, err = base64.StdEncoding.DecodeString(request.Body)
+		if err != nil {
+			return events.APIGatewayProxyResponse{}, err
+		}
+	} else {
+		body = []byte(request.Body)
+	}
+
 	req := &http.Request{
 		Method: request.HTTPMethod,
 		URL: &url.URL{
-			Path: request.Path,
+			Path:     request.Path,
+			RawQuery: url.Values(mapValues(request.QueryStringParameters, request.MultiValueQueryStringParameters)).Encode(),
 		},
-		Header: request.MultiValueHeaders,
+		Header: mapValues(request.Headers, request.MultiValueQueryStringParameters),
 		Body: &closeable{
-			Reader: bytes.NewReader(bodyBytes),
+			Reader: bytes.NewReader(body),
 		},
-		ContentLength: int64(len(bodyBytes)),
+		ContentLength: int64(len(body)),
 	}
 	req = req.WithContext(context.Background())
 

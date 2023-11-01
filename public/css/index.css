@@ -35,3 +35,18 @@ h2 a:hover {
 footer {
   text-align: center;
 }
+
+.btn.btn-primary {
+  background-color: var(--blue);
+  border-color: var(--gray);
+  border-radius: 2;
+}
+
+footer .social-links {
+  font-size: 1.1em;
+}
+
+footer .social-links a {
+  display: inline-block;
+  margin: 0 0.25em;
+}

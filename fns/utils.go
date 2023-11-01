@@ -31,3 +31,20 @@ func (w *writer) Write(b []byte) (int, error) {
 func (w *writer) WriteHeader(statusCode int) {
 	w.status = statusCode
 }
+
+func mapValues(singles map[string]string, multis map[string][]string) map[string][]string {
+	headers := make(http.Header)
+
+	for key, values := range multis {
+		headers[key] = values
+	}
+
+	for key, value := range singles {
+		if _, ok := headers[key]; !ok {
+			headers[key] = []string{}
+		}
+		headers[key] = append(headers[key], value)
+	}
+
+	return headers
+}

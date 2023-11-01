@@ -3,8 +3,10 @@ service: johnjonesfour-dot-com-2023
 
 provider:
   name: aws
-  runtime: provided.al2
+  runtime: go1.x
   stage: prod
+  httpApi:
+    payload: '1.0'
   iam:
     role:
       statements:
@@ -186,7 +188,7 @@ resources:
               OriginRequestPolicyId: !Ref BackendPolicy
               ViewerProtocolPolicy: redirect-to-https
               TargetOriginId: apigateway
-              PathPattern: api/*
+              PathPattern: action/*
           ViewerCertificate: 
             AcmCertificateArn: ${self:custom.conf.certArn}
             SslSupportMethod: sni-only

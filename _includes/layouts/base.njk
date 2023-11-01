@@ -15,8 +15,9 @@
 
 		{%- css %}{% include "node_modules/bootstrap/dist/css/bootstrap.min.css" %}{% endcss %}
 		{%- css %}{% include "public/css/index.css" %}{% endcss %}
+		{%- css %}{% include "public/css/social.css" %}{% endcss %}
 
-		<style>{% getBundle "css" %}</style>
+		<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -49,6 +50,18 @@
 		</main>
 
 		<footer class="container-fluid mb-5">
+			<p class="social-links">
+				<a href="https://www.youtube.com/@johnbuildsthings" target="_blank">
+					<i class="icons8-youtube">YouTube</i>
+				</a>
+
+				<a href="https://github.com/johnjones4" target="_blank">
+					<i class="icons8-github">GitHub</i>
+				</a>
+
+				<a href="https://linkedin.com/in/johnjones4" target="_blank">
+					<i class="icons8-linkedin">GitHub</i>
+				</a>
 			<p>
 				Copyright &copy; John E. Jones IV
 			</p>
@@ -59,5 +72,8 @@
 				<script async data-id="101432210" src="https://static.getclicky.com/js"></script>
 			</p>
 		</footer>
+
+		{%- js %}{% include "node_modules/bootstrap/dist/js/bootstrap.min.js" %}{% endjs %}
+		<script src="{% getBundleFileUrl "js" %}"></script>
 	</body>
 </html>

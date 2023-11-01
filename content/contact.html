@@ -1,5 +1,28 @@
 ---
 layout: layouts/home.njk
+eleventyNavigation:
+  key: Contact
+  order: 4
 ---
 
-Contact!
+<h1>Contact Me</h1>
+<form method="post" action="/action/contact">
+  <div class="mb-3">
+    <label for="subject" class="form-label">Subject</label>
+    <input type="text" class="form-control" id="subject" name="subject" placeholder="Contact me">
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="email@example.com">
+  </div>
+
+  <div class="mb-3">
+    <label for="message" class="form-label">Message</label>
+    <textarea id="message" name="message" class="form-control"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary">Send</button>
+  </div>
+</form>

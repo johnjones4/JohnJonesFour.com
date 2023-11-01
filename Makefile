@@ -1,4 +1,4 @@
-publish: deploy-site
+all: deploy-site deploy-fns
 
 build-fns:
 	rm -rf fns/bin || true
@@ -11,8 +11,8 @@ build-site:
 	npm run build
 
 deploy-site: build-site
-	aws s3 sync _site/. s3://johnjonesfour.com 
-	aws cloudfront create-invalidation --distribution-id E3TRIT7GNH2EU --paths '/*'
+	AWS_PAGER="" aws s3 sync _site/. s3://johnjonesfour.com 
+	AWS_PAGER="" aws cloudfront create-invalidation --distribution-id E3TRIT7GNH2EU --paths '/*'
 
 provision-bot-role:
 # aws cloudformation update-stack --stack-name johnjonesfourdotcom-bot --template-body file://bot_role.yml  --capabilities  CAPABILITY_NAMED_IAM

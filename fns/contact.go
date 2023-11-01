@@ -11,6 +11,8 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/sns"
 )
 
+const contactBody = "<html><body><script>setTimeout(() => window.location.assign('/contact/thankyou'), 100)</script></body></html>"
+
 func contactHandler(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {
@@ -72,6 +74,6 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Set("Location", "/contact/thankyou")
-	w.WriteHeader(http.StatusTemporaryRedirect)
+	w.Header().Set("Content-type", "text/html")
+	w.Write([]byte(contactBody))
 }
