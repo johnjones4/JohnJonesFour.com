@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 
 <h1>Contact Me</h1>
-<form method="post" action="/action/contact">
+<form method="post" action="/action/contact" id="contact">
   <div class="mb-3">
     <label for="subject" class="form-label">Subject</label>
     <input type="text" class="form-control" id="subject" name="subject" placeholder="Contact me">
@@ -26,3 +26,18 @@ eleventyNavigation:
     <button type="submit" class="btn btn-primary">Send</button>
   </div>
 </form>
+
+<script>
+  (async () => {
+    const contactForm = document.getElementById('contact')
+    const res = await fetch('/action/nonce')
+    const info = await res.json()
+    for (const key in info) {
+      const field = document.createElement('input')
+      field.type = 'hidden'
+      field.name = key
+      field.value = info[key]
+      contactForm.appendChild(field)
+    }
+  })()
+</script>

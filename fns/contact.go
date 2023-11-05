@@ -5,10 +5,13 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+	"time"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/sns"
+
+	"github.com/go-jose/go-jose/v3/jwt"
 )
 
 const contactBody = "<html><body><script>setTimeout(() => window.location.assign('/contact/thankyou'), 100)</script></body></html>"
@@ -16,6 +19,34 @@ const contactBody = "<html><body><script>setTimeout(() => window.location.assign
 func contactHandler(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()
 	if err != nil {
+		log.Error(err)
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+
+	nonce := r.FormValue("nonce")
+	token := r.FormValue("token")
+
+	tok, err := jwt.ParseSigned(token)
+	if err != nil {
+		log.Error(err)
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+
+	out := jwt.Claims{}
+	if err := tok.Claims(nonceKey, &out); err != nil {
+		log.Error(err)
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+
+	err = out.Validate(jwt.Expected{
+		Subject: nonce,
+		Issuer:  nonceIssuer,
+		Time:    time.Now(),
+	})
+	if err := tok.Claims(nonceKey, &out); err != nil {
 		log.Error(err)
 		w.WriteHeader(http.StatusBadRequest)
 		return

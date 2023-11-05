@@ -25,6 +25,7 @@ func initMux() {
 	router.Use(middleware.Recoverer)
 
 	router.Post("/prod/action/contact", contactHandler)
+	router.Get("/prod/action/nonce", nonceHandler)
 }
 
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {

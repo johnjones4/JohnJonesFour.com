@@ -20,10 +20,13 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.18.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sts v1.24.0 // indirect
 	github.com/aws/smithy-go v1.16.0 // indirect
+	golang.org/x/crypto v0.0.0-20190911031432-227b76d455e7 // indirect
 )
 
 require (
 	github.com/aws/aws-sdk-go-v2/config v1.20.0
 	github.com/aws/aws-sdk-go-v2/service/sns v1.24.0
+	github.com/go-jose/go-jose/v3 v3.0.0
+	github.com/google/uuid v1.4.0
 	golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8 // indirect
 )

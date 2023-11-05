@@ -28,10 +28,8 @@ provider:
           Resource: "*"
   environment:
     NONCE_KEY: ${self:custom.conf.nonceKey}
-    NONCE_IV: ${self:custom.conf.nonceIv}
     DOMAIN: ${self:custom.domainName}
     EMAIL: ${self:custom.conf.mailTo}
-    MY_IP: ${self:custom.conf.myIp}
 
 resources:
   Resources:
