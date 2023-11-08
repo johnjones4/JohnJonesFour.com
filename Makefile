@@ -2,7 +2,7 @@ all: deploy-site deploy-fns
 
 build-fns:
 	rm -rf fns/bin || true
-	cd fns && GOOS=linux go build -ldflags="-s -w" -o ./bin/fns
+	cd fns && GOARCH=amd64 GOOS=linux go build -ldflags="-s -w" -o ./bin/fns
 
 deploy-fns: build-fns
 	cd fns && ./node_modules/serverless/bin/serverless.js deploy --verbose --force
