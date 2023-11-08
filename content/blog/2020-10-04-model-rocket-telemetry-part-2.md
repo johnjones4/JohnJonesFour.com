@@ -4,6 +4,15 @@ title: "Capturing Model Rocket Telemetry Using a Raspberry Pi Zero (Part 2)"
 description: "Written by someone who has watched \"Apollo 13\" more times than he'd like to admit."
 youtube: z-oKkJN51v8
 note: "To see how I designed and built this rocket, check out <a href=\"/2020/10/03/model-rocket-telemetry-part-1/\">Part 1</a>"
+related:
+  - title: "Raspberry Pi Model Rocket Telemetry Flight 3: 1200 Feet! (With Project Updates)"
+    href: /2021/10/11/raspberry-pi-rocket-telemetry-flight-success
+  - title: "Another Update On My Raspberry Pi Powered Model Rocket Telemetry System"
+    href: /2021/06/14/rocket-update
+  - title: "An Update On My Raspberry Pi Powered Model Rocket"
+    href: /2021/04/04/raspberry-pi-model-rocket-update
+  - title: "Capturing Model Rocket Telemetry Using a Raspberry Pi Zero (Part 1)"
+    href: /2020/10/02/model-rocket-telemetry-part-1
 ---
 
 [Q&A on Hacker News about this project](https://news.ycombinator.com/item?id=24679435)

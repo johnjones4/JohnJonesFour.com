@@ -4,6 +4,15 @@ title: "Raspberry Pi Model Rocket Telemetry Flight 3: 1200 Feet! (With Project U
 description: ""
 youtube: MQ5-HOInSxI
 preview: /images/rocket/assembled_oct9.jpg
+related:
+  - title: "Another Update On My Raspberry Pi Powered Model Rocket Telemetry System"
+    href: /2021/06/14/rocket-update
+  - title: "An Update On My Raspberry Pi Powered Model Rocket"
+    href: /2021/04/04/raspberry-pi-model-rocket-update
+  - title: "Capturing Model Rocket Telemetry Using a Raspberry Pi Zero (Part 2)"
+    href: /2020/10/03/model-rocket-telemetry-part-2
+  - title: "Capturing Model Rocket Telemetry Using a Raspberry Pi Zero (Part 1)"
+    href: /2020/10/02/model-rocket-telemetry-part-1
 ---
 
 I recently joined [NOVAAR, Northern Virginia Association of Rocketry](https://novaar.org/drupal7/) so that I could have consistent access to a launch site and so I could learn from the club's members to grow my own skill. (And potentially pursue high-powered certification.) At the club's launch on October 9 on the Great Meadow in the Plains, VA, I was able to fly my custom telemetry rocket with much success. I detail that below along with information about what I've updated with the [telemetry project I call _White Vest_](https://github.com/johnjones4/white-vest).

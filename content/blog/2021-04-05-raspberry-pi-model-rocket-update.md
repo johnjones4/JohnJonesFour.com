@@ -3,6 +3,15 @@
 title: "An Update On My Raspberry Pi Powered Model Rocket"
 description: "A second launch of the rocket with more powerful motors shows some improvements, but there's still plenty of room to grow."
 youtube: dPmbOca61OM
+related:
+  - title: "Raspberry Pi Model Rocket Telemetry Flight 3: 1200 Feet! (With Project Updates)"
+    href: /2021/10/11/raspberry-pi-rocket-telemetry-flight-success
+  - title: "Another Update On My Raspberry Pi Powered Model Rocket Telemetry System"
+    href: /2021/06/14/rocket-update
+  - title: "Capturing Model Rocket Telemetry Using a Raspberry Pi Zero (Part 2)"
+    href: /2020/10/03/model-rocket-telemetry-part-2
+  - title: "Capturing Model Rocket Telemetry Using a Raspberry Pi Zero (Part 1)"
+    href: /2020/10/02/model-rocket-telemetry-part-1
 ---
 
 When I asked the woman behind the counter in the hobby shop for a
