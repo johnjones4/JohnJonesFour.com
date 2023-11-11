@@ -6,9 +6,11 @@
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
 
-		<link rel="apple-touch-icon" href="{{url}}logo192.png" />
-		<link rel="manifest" href="{{url}}manifest.json" />
-		<link rel="icon" href="{{url}}favicon.ico" />
+		<link rel="apple-touch-icon" href="{{metadata.url}}/logo192.png" />
+		<link rel="manifest" href="{{metadata.url}}/manifest.json" />
+		<link rel="icon" href="{{metadata.url}}/favicon.ico" />
+
+		<link rel="canonical" href="{{metadata.url}}{{page.url}}" >
 
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
