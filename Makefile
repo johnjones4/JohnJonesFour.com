@@ -21,3 +21,6 @@ install:
 	npm install
 	cd fns && npm install
 	cd fns && go get .
+
+resume:
+	pandoc -i content/resume.md -o public/john_e_jones_iv_resume.pdf
