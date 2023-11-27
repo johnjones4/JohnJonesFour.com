@@ -33,6 +33,16 @@ layout: layouts/base.njk
 		{%- if githubs or github or links or related %}
 			<aside class="col-md-4">
 				<h3>Relevant Content</h3>
+				{%- if bom %}
+					<h4>Bill of Materials</h4>
+					<ul>
+						{%- for item in bom %}
+							<li>
+								<a href="{{ item.href }}" target="_blank">{{ item.title }}</a>
+							</li>
+						{%- endfor %}
+					</ul>
+				{%- endif %}
 				{%- if githubs %}
 					<h4>GitHub</h4>
 					<ul>
