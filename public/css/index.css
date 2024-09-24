@@ -50,3 +50,8 @@ footer .social-links a {
   display: inline-block;
   margin: 0 0.25em;
 }
+
+.row.photos { 
+  display: flex; 
+  align-items: center;
+}

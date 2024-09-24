@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+eleventyNavigation:
+  key: Photos
+  order: 3
+---
+
+<div class="col-lg-9 mt-5">
+  {% for row in photos | chunk(4) %}
+    <div class="row photos">
+      {% for photo in row %}
+        <div class="col-md-3 mb-5 text-center">
+          <a href="{{photo.filename}}">
+            <img src="{{photo.filename}}" class="img-fluid" />
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>
+
+<div class="modal" tabindex="-1" id="photos-modal">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="" id="photos-modal-photo" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = new bootstrap.Modal('#photos-modal', {})
+    document.querySelectorAll('.photos a').forEach(a => {
+      a.addEventListener('click', (event) => {
+        event.preventDefault();
+        document.getElementById('photos-modal-photo').src = event.target.src || event.target.href;
+        modal.show();
+        return false;
+      })
+    })
+  })
+</script>
