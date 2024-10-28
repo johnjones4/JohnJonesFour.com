@@ -45,21 +45,21 @@ This is the end of the road for my old timer and so that is going into storage. 
 
 Let's dive in on how the timer works. On the front panel, there are six controls:
 
-	1. A first toggle switch to flip between test strip mode and final print mode. More on that in a moment
-	2. A second toggle focus switch that overrides the timer and manually enables the exposure light to allow cropping and focusing of the image before printing
-	3. A rotary encoder to set a base time. This defaults to 15 seconds on start
-	4. A rotary switch to select 1/4, 1/3, 1/2 or whole stops when testing
-	5. A rotary switch to select which offset from the base time to expose the final print
-	6. And that all important start button that kicks off the timer
+1. A first toggle switch to flip between test strip mode and final print mode. More on that in a moment
+2. A second toggle focus switch that overrides the timer and manually enables the exposure light to allow cropping and focusing of the image before printing
+3. A rotary encoder to set a base time. This defaults to 15 seconds on start
+4. A rotary switch to select 1/4, 1/3, 1/2 or whole stops when testing
+5. A rotary switch to select which offset from the base time to expose the final print
+6. And that all important start button that kicks off the timer
 
 Here's the typical process using this timer:
 
-	1. Set a base time using the rotary encoder
-	2. Set a stop delta using the rotary switch
-	3. Produce a test strip, repeating by varying the base time and stop delta as necessary
-	4. Flip the timer from test mode into final print mode
-	5. Select which stop offset was optimal from the test strip 
-	6. Produce the final print
+1. Set a base time using the rotary encoder
+2. Set a stop delta using the rotary switch
+3. Produce a test strip, repeating by varying the base time and stop delta as necessary
+4. Flip the timer from test mode into final print mode
+5. Select which stop offset was optimal from the test strip 
+6. Produce the final print
 
 In normal test strip printing, I increment the exposure times by fixed intervals, for instance starting at 30 seconds and exposing more of the paper every five seconds. While this seems to make sense at first, linear exposure times do not result in linear changes on a print. Look at the exposure times on any camera, they increment geometrically, doubling every step. In photography that's referred to as a stop. Generating test strips using geometric increments mimics this approach and results in more useful test prints that get me to my desired final print time much faster.
 

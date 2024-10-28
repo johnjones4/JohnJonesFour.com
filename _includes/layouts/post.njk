@@ -27,7 +27,7 @@ layout: layouts/base.njk
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 			<div class="content">
-				{{ content | safe }}
+				{{ content | typeset | safe }}
 			</div>
 		</div>
 		{%- if githubs or github or links or related %}

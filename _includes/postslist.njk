@@ -1,4 +1,4 @@
-{%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
+{# {%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
 <section class="postlist">
 {% for post in postslist | reverse %}
 	<article class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} mb-5">
@@ -21,10 +21,10 @@
 				<img src="{{post.data.preview}}" alt="Preview image" class="img-fluid" />
 			{%- endif %}
 		{%- endif %}
-		<p>{{ post.data.description }}</p>
+		<p>{{ post.data.description | typeset }}</p>
 		<p>
 			<a href="{{ post.url }}" class="postlist-link">Read More</a>
 		</p>
 	</article>
 {% endfor %}
-</section>
+</section> #}

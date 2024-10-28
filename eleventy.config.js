@@ -10,6 +10,7 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 const _ = require('lodash');
+const typeset = require('typeset');
 
 module.exports = function(eleventyConfig) {
 	// Copy the contents of the `public` folder to the output folder
@@ -103,6 +104,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addFilter("chunk", (arr, n) => {
 		return _.chunk(arr, n);
 	});	
+
+	eleventyConfig.addFilter("typeset", t => {
+		t.val = typeset(t.val)
+		return t
+	});
 
 	// Customize Markdown library settings:
 	eleventyConfig.amendLibrary("md", mdLib => {

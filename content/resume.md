@@ -16,7 +16,14 @@ I am a results-driven engineering leader with a proven track record of success a
 
 ## Professional Experience
 
-### Senior Software Engineering Manager, Capital One _(2022 – Present)_
+### Senior Engineer, Bondway.ai _(2024 - Present)_
+
+* Coordinated regularly with company leadership, sales, and product leads in addition to direct customer interaction to conceive, design, and implement new features and technical solutions
+* Architected, implemented, and maintained several critical platform features using Go, Typescript, Vue on AWS stack including ECS Fargate + Aurora Postgres 
+* Architected, implemented, and maintained platform migration from single region availability to multi–region active-active availability
+* Architected, implemented, and maintained fully automated CICD solution using GitLab to drive culture of rigorous testing and regular, unceremonious deployments to production 
+
+### Senior Software Engineering Manager, Capital One _(2022 – 2024)_
 
 * Overseeing version two architecture, development, deployment, and commercialization of a patented 2nd-factor identity technology that indents to delivery an easy, reliable and privacy-oriented identity management solution to partner card issuers and merchants
 * Collaborating extensively with internal product, legal, cyber, and architecture partners, as well as partner teams at licensing and partner companies like AWS and Google to ensure seamless delivery and integration of specialized embedded software
