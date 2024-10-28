@@ -1,4 +1,4 @@
-{# {%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
+{%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
 <section class="postlist">
 {% for post in postslist | reverse %}
 	<article class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} mb-5">
@@ -27,4 +27,4 @@
 		</p>
 	</article>
 {% endfor %}
-</section> #}
+</section>

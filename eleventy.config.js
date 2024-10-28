@@ -106,7 +106,9 @@ module.exports = function(eleventyConfig) {
 	});	
 
 	eleventyConfig.addFilter("typeset", t => {
-		t.val = typeset(t.val)
+		if (t && t.val) {
+			t.val = typeset(t.val)
+		}
 		return t
 	});
 
