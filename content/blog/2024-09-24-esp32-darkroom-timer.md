@@ -8,6 +8,23 @@ githubs:
 links:
   - name: STL Files
     href: https://www.printables.com/model/1016441-darkroom-f-stop-printing-timer-enclosure-and-contr
+bom:
+  - title: Mini Toggle Switch
+    href: https://www.amazon.com/dp/B0799LBFNY?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1
+  - title: Terminal Block Connector
+    href: https://www.amazon.com/dp/B0B1J2SW16?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1
+  - title: uxcell 1P7T 1 Pole 7 Position Selectable Single Deck Band Channel Rotary Switch Selector
+    href: https://www.amazon.com/dp/B07JMWL28Z?ref=ppx_yo2ov_dt_b_fed_asin_title
+  - title: uxcell 1P4T 1 Pole 4 Position 1 Deck Band Channel Rotary Switch Selector with Knob
+    href: https://www.amazon.com/dp/B07JM3GWQ4?ref=ppx_yo2ov_dt_b_fed_asin_title
+  - title: Iot Relay
+    href: https://www.amazon.com/dp/B00WV7GMA2?ref=ppx_yo2ov_dt_b_fed_asin_title
+  - title: Assembled Adafruit 0.56" 4-Digit 7-Segment Display - w/ I2C Backpack STEMMA QT - Red
+    href: https://www.adafruit.com/product/5599
+  - title: Rotary Encoder + Extras
+    href: https://www.adafruit.com/product/377
+  - title: Twidec/10Pcs SPST AC250V/3A AC125V/6A Mini Off(ON) NO Momentary Push Button Switch 5 Colour R13-507-5C
+    href: https://www.amazon.com/gp/product/B07SVTQ7B9/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1
 
 ---
 
