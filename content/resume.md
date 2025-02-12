@@ -16,12 +16,12 @@ I am a results-driven engineering leader with a proven track record of success a
 
 ## Professional Experience
 
-### Senior Engineer, Bondway.ai _(2024 - Present)_
+### VP of Engineering, Head of Customer Experience, Bondway.ai _(2024 - Present)_
 
 * Coordinated regularly with company leadership, sales, and product leads in addition to direct customer interaction to conceive, design, and implement new features and technical solutions
 * Architected, implemented, and maintained several critical platform features using Go, Typescript, Vue on AWS stack including ECS Fargate + Aurora Postgres managed via Terraform 
 * Architected, implemented, and maintained platform migration from single region availability to multi–region active-active availability
-* Architected, implemented, and maintained fully automated CI/CD solution using GitLab to drive culture of rigorous testing and regular, unceremonious deployments to production 
+* Designed, implemented, and managed fully automated CI/CD solution using GitLab to drive culture of rigorous testing and regular, unceremonious deployments to production 
 
 ### Senior Software Engineering Manager, Capital One _(2022 – 2024)_
 
