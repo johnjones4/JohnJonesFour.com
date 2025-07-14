@@ -2,7 +2,9 @@
 
 title: "I Built the Ultimate Darkroom Timer (and Finally Finished My Dream Film Space)"
 description: "Welcome to my film photography sanctuary — a custom-built darkroom with a DIY ESP32-powered development timer at its heart. In this video, I’ll give you a full tour of the space I spent years dreaming about and months building."
-youtube: 
+youtube: me1DkUGl4lI
+githubs:
+  - johnjones4/darkroom-timer-II
 bom:
   - title: Dispenser for Premixed Chemistry
     href: https://amzn.to/4ktc9JV
